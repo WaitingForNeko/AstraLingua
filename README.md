@@ -7,9 +7,9 @@ a game by studio [Waiting For Neko](https://waitingforneko.com).
 
 ## Repository Contents
 
-- [`AstraLingua`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLingua): A C# library for converting to/from Astra Lingua.
-- [`AstraLinguaCheatSheet`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaCheatSheet): A PDF explaining how Astra Lingua works.
-- [`AstraLinguaDictionary`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaDictionary): A JSONH file containing the standard words used in Astra Lingua.
+- [`AstraLingua`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLingua) - A C# library for converting to/from Astra Lingua.
+- [`AstraLinguaCheatSheet`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaCheatSheet) - A PDF explaining how Astra Lingua works.
+- [`AstraLinguaDictionary`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaDictionary) - A JSONH file containing the standard words used in Astra Lingua.
 
 ## Overview
 
