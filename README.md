@@ -2,6 +2,8 @@
 
 # Astra Lingua
 
+[![NuGet](https://img.shields.io/nuget/v/AstraLingua.svg)](https://www.nuget.org/packages/AstraLingua)
+
 Astra Lingua is a universal alien language invented for [Konekomi Castle](https://store.steampowered.com/app/3812300),
 a game by studio [Waiting For Neko](https://waitingforneko.com).
 
