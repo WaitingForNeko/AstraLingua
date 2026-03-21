@@ -36,12 +36,15 @@ string AstraLinguaDictionaryFileLines = LineBuilder.ToString();
 
 // Write dictionary to file
 string AstraLinguaDictionaryFile = $$"""
+    // This file was automatically generated.
+    // It should not be updated directly.
+
     using System.Collections.Immutable;
 
     namespace AstraLingua;
 
     public static partial class AstraLinguaDictionary {
-        public static ImmutableArray<string> Words { get; } = [
+        private static readonly ImmutableArray<string> GeneratedWords = [
             {{AstraLinguaDictionaryFileLines}}
         ];
     }

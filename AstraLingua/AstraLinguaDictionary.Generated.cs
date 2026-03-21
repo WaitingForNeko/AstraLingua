@@ -1,3 +1,6 @@
+// This file was automatically generated.
+// It should not be updated directly.
+
 using System.Collections.Immutable;
 
 namespace AstraLingua;
