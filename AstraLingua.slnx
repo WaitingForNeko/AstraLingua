@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="AstraLinguaDictionary.jsonh" />
+    <File Path="AstraLinguaDictionaryGenerator.cs" />
+  </Folder>
+  <Project Path="AstraLingua/AstraLingua.csproj" />
+</Solution>
