@@ -7,4 +7,5 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="AstraLingua/AstraLingua.csproj" />
+  <Project Path="AstraLingua.Tests/AstraLingua.Tests.csproj" />
 </Solution>

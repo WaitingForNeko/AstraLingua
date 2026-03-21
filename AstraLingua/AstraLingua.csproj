@@ -13,6 +13,27 @@
         <IsTrimmable>True</IsTrimmable>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Title>AstraLingua</Title>
+        <Description>A universal alien language invented for Konekomi Castle.</Description>
+        <PackageProjectUrl>https://github.com/WaitingForNeko/AstraLingua</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/WaitingForNeko/AstraLingua</RepositoryUrl>
+        <PackageTags>Astra Lingua; language; alien language</PackageTags>
+        <!--<PackageIcon>IconUpscaledSquare.png</PackageIcon>-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../README.md">
+            <Pack>True</Pack>
+            <PackagePath>/</PackagePath>
+        </None>
+    </ItemGroup>
+
     <ItemGroup>
         <PackageReference Include="BigReal" Version="5.7.0" />
     </ItemGroup>

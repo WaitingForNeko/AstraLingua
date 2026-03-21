@@ -54,6 +54,10 @@ Some examples attempting to translate English to Astra Lingua:
 - Number Codes: `8 (hello)`
 - Astra Lingua: `⊢⊢⊩⊩⊪⊪`
 
+#### "Astra Lingua"
+- Number Codes: `713 (Astra Lingua)`
+- Astra Lingua: `⊢⊢⊩⊢⊩⊪⊢⊢⊢⊩⊪⊪`
+
 #### "Who are you?" (Konekomi Dialect)
 - Number Codes: `19 (you) 1 (something) 22 (question) ? (uncertain) ? (uncertain)`
 - Astra Lingua: `⊢⊢⊪⊪⊩⊢⊩⊪⊢⊢⊢⊪⊪⊢⊢––`
@@ -64,7 +68,7 @@ Some examples attempting to translate English to Astra Lingua:
 
 #### "3.5"
 - Fraction: `7 / 2`
-- Balanced Ternary: `1T1 / 1T`
+- Balanced Ternary Fraction: `1T1 / 1T`
 - Astra Lingua: `[⊢⊪⊢>⊢⊪[`
 
 #### "Three Point Five"

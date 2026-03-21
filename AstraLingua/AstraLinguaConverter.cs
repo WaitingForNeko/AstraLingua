@@ -6,10 +6,10 @@ using ExtendedNumerics;
 namespace AstraLingua;
 
 public static class AstraLinguaConverter {
-    public const char SymbolPositive = '⊢';
+    public const char SymbolOne = '⊢';
     public const char SymbolZero = '⊩';
-    public const char SymbolNegative = '⊪';
-    public const char SymbolSeparator = '>';
+    public const char SymbolMinusOne = '⊪';
+    public const char SymbolDivision = '>';
     public const char SymbolNumber = '[';
     public const char SymbolUncertainTone = '–';
     public const char SymbolNeutralTone = '=';
@@ -36,15 +36,24 @@ public static class AstraLinguaConverter {
 
         return BalancedTernaryToInteger(ParseBalancedTernary(AstraLinguaInteger));
     }
-    public static string RealToAstraLinguaRational(BigReal Real, bool Simplified = true) {
+    public static string RationalToAstraLinguaRational(BigReal Rational, bool Simplified = true) {
+        (sbyte[] Numerator, sbyte[] Denominator) = RationalToBalancedTernaryRational(Rational, Simplified);
+
         return string.Concat(
             [SymbolNumber],
-            StringifyBalancedTernaryRational(RealToBalancedTernaryRational(Real, Simplified)),
+            StringifyBalancedTernaryRational(Numerator, Denominator),
             [SymbolNumber]
         );
     }
-    public static BigReal AstraLinguaRationalToReal(scoped ReadOnlySpan<char> AstraLinguaInteger) {
-        return BalancedTernaryRationalToReal(ParseBalancedTernaryRational(AstraLinguaInteger));
+    public static BigReal AstraLinguaRationalToRational(scoped ReadOnlySpan<char> AstraLinguaRational) {
+        // Strip optional brackets
+        if (AstraLinguaRational.StartsWith(SymbolNumber) && AstraLinguaRational.EndsWith(SymbolNumber)) {
+            AstraLinguaRational = AstraLinguaRational[1..^1];
+        }
+
+        (sbyte[] Numerator, sbyte[] Denominator) = ParseBalancedTernaryRational(AstraLinguaRational);
+
+        return BalancedTernaryRationalToRational(Numerator, Denominator);
     }
     public static string AstraLinguaToTonedAstraLingua(scoped ReadOnlySpan<char> AstraLingua, int UncertainTones = 0, int NeutralTones = 0, int UrgentTones = 0) {
         return string.Concat(
@@ -264,13 +273,13 @@ public static class AstraLinguaConverter {
 
         return BalancedTrits;
     }
-    private static (sbyte[] Numerator, sbyte[] Denominator) RealToBalancedTernaryRational(BigReal Real, bool Simplified = true) {
+    private static (sbyte[] Numerator, sbyte[] Denominator) RationalToBalancedTernaryRational(BigReal Rational, bool Simplified = true) {
         if (Simplified) {
-            Real = BigReal.Simplify(Real);
+            Rational = BigReal.Simplify(Rational);
         }
         return (
-            IntegerToBalancedTernary(Real.Numerator),
-            IntegerToBalancedTernary(Real.Denominator)
+            IntegerToBalancedTernary(Rational.Numerator),
+            IntegerToBalancedTernary(Rational.Denominator)
         );
     }
     private static BigInteger BalancedTernaryToInteger(scoped ReadOnlySpan<sbyte> BalancedTrits) {
@@ -292,18 +301,15 @@ public static class AstraLinguaConverter {
 
         return Integer;
     }
-    private static BigReal BalancedTernaryRationalToReal(scoped ReadOnlySpan<sbyte> Numerator, scoped ReadOnlySpan<sbyte> Denominator, bool Simplified = true) {
-        BigReal Real = new(
+    private static BigReal BalancedTernaryRationalToRational(scoped ReadOnlySpan<sbyte> Numerator, scoped ReadOnlySpan<sbyte> Denominator, bool Simplified = true) {
+        BigReal Rational = new(
             BalancedTernaryToInteger(Numerator),
             BalancedTernaryToInteger(Denominator)
         );
         if (Simplified) {
-            BigReal.Simplify(Real);
+            BigReal.Simplify(Rational);
         }
-        return Real;
-    }
-    private static BigReal BalancedTernaryRationalToReal((sbyte[] Numerator, sbyte[] Denominator) BalancedTritsRational, bool Simplified = true) {
-        return BalancedTernaryRationalToReal(BalancedTritsRational.Numerator, BalancedTritsRational.Denominator, Simplified);
+        return Rational;
     }
     private static int CountBalancedTernaryDigits(BigInteger Integer) {
         Integer = BigInteger.Abs(Integer);
@@ -326,8 +332,8 @@ public static class AstraLinguaConverter {
         foreach (sbyte BalancedTrit in BalancedTrits) {
             char BalancedTritSymbol = BalancedTrit switch {
                 0 => SymbolZero,
-                1 => SymbolPositive,
-                -1 => SymbolNegative,
+                1 => SymbolOne,
+                -1 => SymbolMinusOne,
                 _ => throw new ArgumentOutOfRangeException(nameof(BalancedTrits), "Balanced trit must be 0, 1 or -1")
             };
 
@@ -339,12 +345,9 @@ public static class AstraLinguaConverter {
     private static string StringifyBalancedTernaryRational(scoped ReadOnlySpan<sbyte> Numerator, scoped ReadOnlySpan<sbyte> Denominator) {
         return string.Concat(
             StringifyBalancedTernary(Numerator),
-            [SymbolSeparator],
+            [SymbolDivision],
             StringifyBalancedTernary(Denominator)
         );
-    }
-    private static string StringifyBalancedTernaryRational((sbyte[] Numerator, sbyte[] Denominator) BalancedTritsRational) {
-        return StringifyBalancedTernaryRational(BalancedTritsRational.Numerator, BalancedTritsRational.Denominator);
     }
     private static sbyte[] ParseBalancedTernary(scoped ReadOnlySpan<char> BalancedTernaryString) {
         sbyte[] BalancedTrits = new sbyte[BalancedTernaryString.Length];
@@ -358,8 +361,8 @@ public static class AstraLinguaConverter {
 
             BalancedTrits[DigitIndex] = BalancedTernaryString[DigitIndex] switch {
                 SymbolZero => 0,
-                SymbolPositive => 1,
-                SymbolNegative => -1,
+                SymbolOne => 1,
+                SymbolMinusOne => -1,
                 _ => throw new NotImplementedException($"Unsupported character: '{BalancedTernaryString[DigitIndex]}'")
             };
 
@@ -369,7 +372,7 @@ public static class AstraLinguaConverter {
         return BalancedTrits;
     }
     private static (sbyte[] Numerator, sbyte[] Denominator) ParseBalancedTernaryRational(scoped ReadOnlySpan<char> BalancedTernaryRationalString) {
-        int SeparatorIndex = BalancedTernaryRationalString.IndexOf(SymbolSeparator);
+        int SeparatorIndex = BalancedTernaryRationalString.IndexOf(SymbolDivision);
 
         if (SeparatorIndex < 0) {
             return (ParseBalancedTernary(BalancedTernaryRationalString), []);
