@@ -3,7 +3,7 @@ using System.Collections.Immutable;
 namespace AstraLingua;
 
 public static partial class AstraLinguaDictionary {
-    public static ImmutableArray<string> Words { get; } = [
+    private static readonly ImmutableArray<string> GeneratedWords = [
         /*0*/ "nothing (no object)",
         /*1*/ "something (object)",
         /*2*/ "life (moving object)",

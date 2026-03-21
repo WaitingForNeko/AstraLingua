@@ -1,6 +1,10 @@
+using System.Collections.Immutable;
+
 namespace AstraLingua;
 
 public static partial class AstraLinguaDictionary {
+    public static ImmutableArray<string> Words => GeneratedWords;
+
     public static string GetWord(int NumberCode) {
         return Words[NumberCode];
     }
