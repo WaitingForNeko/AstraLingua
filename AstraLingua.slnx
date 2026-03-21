@@ -3,6 +3,7 @@
     <File Path="AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf" />
     <File Path="AstraLinguaDictionary/AstraLinguaDictionary.jsonh" />
     <File Path="AstraLinguaDictionary/AstraLinguaDictionaryGenerator.cs" />
+    <File Path="LICENSE.md" />
     <File Path="README.md" />
   </Folder>
   <Project Path="AstraLingua/AstraLingua.csproj" />
