@@ -35,13 +35,13 @@ string AstraLinguaDictionaryFile = $$"""
 
     namespace AstraLingua;
 
-    public static class AstraLinguaDictionary {
+    public static partial class AstraLinguaDictionary {
         public static FrozenDictionary<int, string> Dictionary { get; } = new Dictionary<int, string>() {
             {{AstraLinguaDictionaryFileLines}}
         }.ToFrozenDictionary();
     }
     """;
-File.WriteAllText("../AstraLingua/AstraLinguaDictionary.cs", AstraLinguaDictionaryFile);
+File.WriteAllText("../AstraLingua/AstraLinguaDictionary.Generated.cs", AstraLinguaDictionaryFile);
 
 // JSON Serializer Context
 [JsonSourceGenerationOptions(

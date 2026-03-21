@@ -1,4 +1,6 @@
-﻿using ExtendedNumerics;
+﻿#pragma warning disable IDE0042 // Deconstruct variable declaration
+
+using ExtendedNumerics;
 using System.Numerics;
 
 namespace AstraLingua.Tests;
@@ -32,6 +34,21 @@ public class ConvertTests {
             OutputResult.ShouldBe(TestItem.AstraLingua);
             BigReal InputResult = AstraLinguaConverter.AstraLinguaRationalToRational(OutputResult);
             InputResult.ShouldBe(TestItem.Number);
+        }
+    }
+    [Fact]
+    public void WordTest() {
+        (int NumberCode, string Word, string WordName, string WordDescription)[] TestData = [
+            (8, "hello (start communication)", "hello", "start communication"),
+        ];
+
+        foreach (var TestItem in TestData) {
+            string WordResult = AstraLinguaDictionary.Dictionary[TestItem.NumberCode];
+            WordResult.ShouldBe(TestItem.Word);
+            string WordNameResult = AstraLinguaDictionary.GetWordName(WordResult);
+            WordNameResult.ShouldBe(TestItem.WordName);
+            string WordDescriptionResult = AstraLinguaDictionary.GetWordDescription(WordResult);
+            WordDescriptionResult.ShouldBe(TestItem.WordDescription);
         }
     }
 }
