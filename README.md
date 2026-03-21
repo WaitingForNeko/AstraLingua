@@ -44,7 +44,7 @@ but standard meanings can be found in the Astra Lingua Dictionary. For example:
 - `18` - me (speaker / self)
 - `149` - storm (atmospheric disturbance / hazard)
 
-To learn more about Astra Lingua, you can look at the cheat sheet or [watch the video](https://youtu.be/EdC5M-olroU).
+To learn more about Astra Lingua, you can [read the cheat sheet](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf) or [watch the video](https://youtu.be/EdC5M-olroU).
 
 ## Examples
 
