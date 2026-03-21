@@ -41,7 +41,7 @@ string AstraLinguaDictionaryFile = $$"""
         }.ToFrozenDictionary();
     }
     """;
-File.WriteAllText("AstraLingua/AstraLinguaDictionary.cs", AstraLinguaDictionaryFile);
+File.WriteAllText("../AstraLingua/AstraLinguaDictionary.cs", AstraLinguaDictionaryFile);
 
 // JSON Serializer Context
 [JsonSourceGenerationOptions(
