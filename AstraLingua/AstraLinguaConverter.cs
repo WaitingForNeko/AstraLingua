@@ -5,22 +5,58 @@ using ExtendedNumerics;
 
 namespace AstraLingua;
 
+/// <summary>
+/// Contains methods to convert to/from Astra Lingua.
+/// </summary>
 public static class AstraLinguaConverter {
+    /// <summary>
+    /// The symbol used for the digit 1.
+    /// </summary>
     public const char SymbolOne = '⊢';
+    /// <summary>
+    /// The symbol used for the digit 0.
+    /// </summary>
     public const char SymbolZero = '⊩';
+    /// <summary>
+    /// The symbol used for the digit -1 / T.
+    /// </summary>
     public const char SymbolMinusOne = '⊪';
-    public const char SymbolDivision = '>';
+    /// <summary>
+    /// The symbol used around shorthand numbers.
+    /// </summary>
     public const char SymbolNumber = '[';
+    /// <summary>
+    /// The symbol used for shorthand division.
+    /// </summary>
+    public const char SymbolDivision = '>';
+    /// <summary>
+    /// The symbol used for uncertainty or questioning, specific to the Konekomi Dialect.
+    /// </summary>
     public const char SymbolUncertainTone = '–';
+    /// <summary>
+    /// The symbol used for neutrality or expressionlessness, specific to the Konekomi Dialect.
+    /// </summary>
     public const char SymbolNeutralTone = '=';
+    /// <summary>
+    /// The symbol used for urgency or emphasis, specific to the Konekomi Dialect.
+    /// </summary>
     public const char SymbolUrgentTone = '≡';
 
+    /// <summary>
+    /// Converts a sequence of number codes to a sequence of Astra Lingua.
+    /// </summary>
     public static string NumberCodesToAstraLingua(params scoped ReadOnlySpan<BigInteger> NumberCodes) {
         return StringifyBalancedTernary(IntegersToSentence(NumberCodes));
     }
+    /// <summary>
+    /// Converts a sequence of Astra Lingua to a sequence of number codes.
+    /// </summary>
     public static BigInteger[] AstraLinguaToNumberCodes(scoped ReadOnlySpan<char> AstraLingua) {
         return SentenceToIntegers(ParseBalancedTernary(AstraLingua));
     }
+    /// <summary>
+    /// Converts an integer to an Astra Lingua literal integer.
+    /// </summary>
     public static string IntegerToAstraLinguaInteger(BigInteger Integer) {
         return string.Concat(
             [SymbolNumber],
@@ -28,6 +64,9 @@ public static class AstraLinguaConverter {
             [SymbolNumber]
         );
     }
+    /// <summary>
+    /// Converts an Astra Lingua literal integer to an integer.
+    /// </summary>
     public static BigInteger AstraLinguaIntegerToInteger(scoped ReadOnlySpan<char> AstraLinguaInteger) {
         // Strip optional brackets
         if (AstraLinguaInteger.StartsWith(SymbolNumber) && AstraLinguaInteger.EndsWith(SymbolNumber)) {
@@ -36,6 +75,9 @@ public static class AstraLinguaConverter {
 
         return BalancedTernaryToInteger(ParseBalancedTernary(AstraLinguaInteger));
     }
+    /// <summary>
+    /// Converts a rational to an Astra Lingua literal rational.
+    /// </summary>
     public static string RationalToAstraLinguaRational(BigReal Rational, bool Simplified = true) {
         (sbyte[] Numerator, sbyte[] Denominator) = RationalToBalancedTernaryRational(Rational, Simplified);
 
@@ -45,6 +87,9 @@ public static class AstraLinguaConverter {
             [SymbolNumber]
         );
     }
+    /// <summary>
+    /// Converts an Astra Lingua literal rational to a rational.
+    /// </summary>
     public static BigReal AstraLinguaRationalToRational(scoped ReadOnlySpan<char> AstraLinguaRational) {
         // Strip optional brackets
         if (AstraLinguaRational.StartsWith(SymbolNumber) && AstraLinguaRational.EndsWith(SymbolNumber)) {
@@ -55,6 +100,9 @@ public static class AstraLinguaConverter {
 
         return BalancedTernaryRationalToRational(Numerator, Denominator);
     }
+    /// <summary>
+    /// Converts a sequence of Astra Lingua to a sequence of Astra Lingua in the Konekomi Dialect.
+    /// </summary>
     public static string AstraLinguaToTonedAstraLingua(scoped ReadOnlySpan<char> AstraLingua, int UncertainTones = 0, int NeutralTones = 0, int UrgentTones = 0) {
         return string.Concat(
             AstraLingua,
@@ -63,6 +111,9 @@ public static class AstraLinguaConverter {
             new string(SymbolUrgentTone, UrgentTones)
         );
     }
+    /// <summary>
+    /// Converts a sequence of Astra Lingua in the Konekomi Dialect to a sequence of Astra Lingua.
+    /// </summary>
     public static string TonedAstraLinguaToAstraLingua(scoped ReadOnlySpan<char> AstraLingua, out int UncertainTones, out int NeutralTones, out int UrgentTones) {
         UncertainTones = 0;
         NeutralTones = 0;
