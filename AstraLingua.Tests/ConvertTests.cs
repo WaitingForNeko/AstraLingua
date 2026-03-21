@@ -43,7 +43,7 @@ public class ConvertTests {
         ];
 
         foreach (var TestItem in TestData) {
-            string WordResult = AstraLinguaDictionary.Dictionary[TestItem.NumberCode];
+            string WordResult = AstraLinguaDictionary.GetWord(TestItem.NumberCode);
             WordResult.ShouldBe(TestItem.Word);
             string WordNameResult = AstraLinguaDictionary.GetWordName(WordResult);
             WordNameResult.ShouldBe(TestItem.WordName);

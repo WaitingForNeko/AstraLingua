@@ -1,5 +1,6 @@
 ﻿#:package JsonhCs@7.0.0
 
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
@@ -11,34 +12,38 @@ string AstraLinguaDictionaryJsonh = File.ReadAllText("AstraLinguaDictionary.json
 
 // Parse dictionary from JSONH
 JsonNode? AstraLinguaDictionaryNode = JsonhReader.ParseNode(AstraLinguaDictionaryJsonh).Value;
-Dictionary<int, string> AstraLinguaDictionaryValue = JsonSerializer.Deserialize(
+Dictionary<int, string> AstraLinguaDictionary = JsonSerializer.Deserialize(
     AstraLinguaDictionaryNode, AstraLinguaJsonContext.WithUnsafeRelaxedJsonEscaping.DictionaryInt32String
 )!;
 
 // Generate lines to insert in dictionary file
-string AstraLinguaDictionaryFileLines = string.Join(
-    "\n        ",
-    AstraLinguaDictionaryValue.Select(
-        Kvp => $"[{JsonSerializer.Serialize(
-            Kvp.Key,
-            AstraLinguaJsonContext.WithUnsafeRelaxedJsonEscaping.Int32
-        )}] = {JsonSerializer.Serialize(
-            Kvp.Value,
-            AstraLinguaJsonContext.WithUnsafeRelaxedJsonEscaping.String
-        )},"
-    )
-);
+StringBuilder LineBuilder = new();
+int ExpectedIndex = 0;
+foreach ((int NumberCode, string Word) in AstraLinguaDictionary) {
+    if (NumberCode != ExpectedIndex) {
+        throw new InvalidOperationException($"Unexpected number code: {NumberCode}");
+    }
+    ExpectedIndex++;
+
+    if (NumberCode != 0) {
+        LineBuilder.Append("\n        ");
+    }
+    LineBuilder.Append($"/*{NumberCode}*/ ");
+    LineBuilder.Append(JsonSerializer.Serialize(Word, AstraLinguaJsonContext.WithUnsafeRelaxedJsonEscaping.String));
+    LineBuilder.Append(',');
+}
+string AstraLinguaDictionaryFileLines = LineBuilder.ToString();
 
 // Write dictionary to file
 string AstraLinguaDictionaryFile = $$"""
-    using System.Collections.Frozen;
+    using System.Collections.Immutable;
 
     namespace AstraLingua;
 
     public static partial class AstraLinguaDictionary {
-        public static FrozenDictionary<int, string> Dictionary { get; } = new Dictionary<int, string>() {
+        public static ImmutableArray<string> Words { get; } = [
             {{AstraLinguaDictionaryFileLines}}
-        }.ToFrozenDictionary();
+        ];
     }
     """;
 File.WriteAllText("../AstraLingua/AstraLinguaDictionary.Generated.cs", AstraLinguaDictionaryFile);

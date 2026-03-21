@@ -2,7 +2,7 @@ namespace AstraLingua;
 
 public static partial class AstraLinguaDictionary {
     public static string GetWord(int NumberCode) {
-        return Dictionary[NumberCode];
+        return Words[NumberCode];
     }
     public static string GetWordName(scoped ReadOnlySpan<char> Word) {
         int OpenBracketIndex = Word.IndexOf('(');
@@ -15,7 +15,7 @@ public static partial class AstraLinguaDictionary {
         return Word.ToString();
     }
     public static string GetWordName(int NumberCode) {
-        return GetWordName(Dictionary[NumberCode]);
+        return GetWordName(GetWord(NumberCode));
     }
     public static string GetWordDescription(scoped ReadOnlySpan<char> Word) {
         int OpenBracketIndex = Word.IndexOf('(');
@@ -31,6 +31,6 @@ public static partial class AstraLinguaDictionary {
         return Word.ToString();
     }
     public static string GetWordDescription(int NumberCode) {
-        return GetWordDescription(Dictionary[NumberCode]);
+        return GetWordDescription(GetWord(NumberCode));
     }
 }
