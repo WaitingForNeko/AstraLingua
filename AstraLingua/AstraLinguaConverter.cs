@@ -420,6 +420,10 @@ public static class AstraLinguaConverter {
             DigitIndex++;
         }
 
+        if (DigitIndex == 0) {
+            throw new ArgumentException("Input string has no digits");
+        }
+
         return BalancedTrits;
     }
     private static (sbyte[] Numerator, sbyte[] Denominator) ParseBalancedTernaryRational(scoped ReadOnlySpan<char> BalancedTernaryRationalString) {
