@@ -24,6 +24,20 @@ public class ConvertTests {
         }
     }
     [Fact]
+    public void AstraLinguaTest() {
+        (string AstraLingua, BigInteger[] NumberCodes)[] TestData = [
+            ("⊢⊢⊩⊩⊪⊪", [8]),
+            ("  \n \u2028 ⊢⊢⊩⊩⊪⊪\r\n\t", [8]),
+        ];
+
+        foreach (var TestItem in TestData) {
+            BigInteger[] OutputResult = AstraLinguaConverter.AstraLinguaToNumberCodes(TestItem.AstraLingua);
+            OutputResult.ShouldBe(TestItem.NumberCodes);
+            string InputResult = AstraLinguaConverter.NumberCodesToAstraLingua(OutputResult);
+            InputResult.ShouldBe(TestItem.AstraLingua.Trim());
+        }
+    }
+    [Fact]
     public void NumberTest() {
         (BigReal Number, string AstraLingua)[] TestData = [
             (BigReal.Parse("3.5"), "[⊢⊪⊢>⊢⊪["),
