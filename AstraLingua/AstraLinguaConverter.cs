@@ -410,11 +410,11 @@ public static class AstraLinguaConverter {
                 continue;
             }
 
-            BalancedTrits[DigitIndex] = BalancedTernaryString[DigitIndex] switch {
+            BalancedTrits[DigitIndex] = BalancedTernaryString[Index] switch {
                 SymbolZero => 0,
                 SymbolOne => 1,
                 SymbolMinusOne => -1,
-                _ => throw new NotImplementedException($"Unsupported character: '{BalancedTernaryString[DigitIndex]}'")
+                _ => throw new NotImplementedException($"Unsupported character: '{BalancedTernaryString[Index]}'")
             };
 
             DigitIndex++;
