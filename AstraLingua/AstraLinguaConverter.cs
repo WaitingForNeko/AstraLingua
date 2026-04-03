@@ -401,30 +401,26 @@ public static class AstraLinguaConverter {
         );
     }
     private static sbyte[] ParseBalancedTernary(scoped ReadOnlySpan<char> BalancedTernaryString) {
-        sbyte[] BalancedTrits = new sbyte[BalancedTernaryString.Length];
-
-        int DigitIndex = 0;
+        List<sbyte> BalancedTrits = new(capacity: BalancedTernaryString.Length);
 
         for (int Index = 0; Index < BalancedTernaryString.Length; Index++) {
             if (char.IsWhiteSpace(BalancedTernaryString[Index])) {
                 continue;
             }
 
-            BalancedTrits[DigitIndex] = BalancedTernaryString[Index] switch {
+            BalancedTrits.Add(BalancedTernaryString[Index] switch {
                 SymbolZero => 0,
                 SymbolOne => 1,
                 SymbolMinusOne => -1,
                 _ => throw new NotImplementedException($"Unsupported character: '{BalancedTernaryString[Index]}'")
-            };
-
-            DigitIndex++;
+            });
         }
 
-        if (DigitIndex == 0) {
+        if (BalancedTrits.Count == 0) {
             throw new ArgumentException("Input string has no digits");
         }
 
-        return BalancedTrits;
+        return [.. BalancedTrits];
     }
     private static (sbyte[] Numerator, sbyte[] Denominator) ParseBalancedTernaryRational(scoped ReadOnlySpan<char> BalancedTernaryRationalString) {
         int SeparatorIndex = BalancedTernaryRationalString.IndexOf(SymbolDivision);
