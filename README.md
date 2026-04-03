@@ -13,6 +13,147 @@ a game by studio [Waiting For Neko](https://waitingforneko.com).
 - [`AstraLinguaCheatSheet`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaCheatSheet) - A PDF explaining how Astra Lingua works.
 - [`AstraLinguaDictionary`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLinguaDictionary) - A JSONH file containing the standard words used in Astra Lingua.
 
+### Try Online
+
+Try Astra Lingua online at [.NET Lab](https://lab.razor.fyi/#zVXdbtMwFNYEF5ArxBOY9CYVxeVHbNOqTkAHaFM1TeukSnSTMKmXWrROcRy0CfECe4zdrbwBj8A1T7BbXgIlsV3HSZr-MI0qUuOT850c-3zfF-tnxbIOmO8xNIJu8PBHpbI1Ru5n5GHwOuAMtQn1QvTqGXwBn1pWGBDqgc55wPGokVrBNqFfjNB-OMKMuIEMawVl6O0Zx7SP-9NUq14H--HoE2ag5fdxAJ5sJ0CQIK0KOQWchdj6ZgEAQL0Oduk45PHiDfF2KcceZr0TUSUp0gS9OCH6bdbA-uZGvDxpWLJIlBffB5xFnbUJxwwNO8mqKcJwzyfUsYFd08vDDh5ilzvTEGiKrpOmd4jLiU8RO4fvMe_6rL-PRthxCOXVKaharTb0FnZw4DIyjpA31UZZC1r1_BZqRg9puPZuBddiLZ9-xYxjBrUKR76W4WRLt3wa-EMMu4xw3CYUO4UP7BIu2cVIMf6tY37MbfA4TYdimDayrQSYGWIxWG9VoDPnX4zWNybQmeOvNqzvVgXTPjmNhaZjosPRO5gptOx8QRPYtq1Edn1xGV9X8TWJLxW51JYqOLm-uFJw27aLpZnHKkHKlk9dxB0tA3YHmGGnNYi08MgdIAZ3g-6AcNwZIzd6oDg_wz1ySasFj3wtX3_9P5XTf2AIt2mLCyp_FrntlXV0IxpeyT7KLCulfEF00xFlfM6vrCrT1ILwALEAO1Mtr28kvlAtlrSAKlrJUkd-EpKTzjqAicxVqkhKfVpEzBH_y3Gs5Bhn0ExkqGml9rEsO80ixWavNT7PyLPnfohi6Q4N3-8Z7t5b2NLNgRY6u-xgMYc_xGgItObLnF1RR_Ilp4M0Oc0NqD5NMq_iZ9n5LW1pczKvjLAprqkDNoUhH5QZjDkmEYIdMhoPyem5IwOm2TyHL4XbzLAbWbh8RgLwjqH4U5UHSBcrdqrMS3OpJ7NSXiWDjsG4BRlUOpUZHJIpav7p7RQD5dEpYPosl2Vt5vXFXqdvey7-Le52k-3kbnG7y7Dilv1uyj9FulLHW1od8-twFa88zJn_0m5547QvF5pk-t4dFtIP9-9d__n1e-I9uPtx7WztLw)!
+
+<details>
+<summary>Expand source code</summary>
+
+```cs
+#:package AstraLingua@1.3.0
+
+using System;
+using System.Linq;
+using System.Numerics;
+using AstraLingua;
+using ExtendedNumerics;
+
+// Number Codes -> Astra Lingua
+#if true
+{
+    // Input
+    BigInteger[] NumberCodes = [
+        8, 687
+    ];
+
+    // Code
+    string LiteralString = string.Join(" ", NumberCodes.Select(NumberCode => AstraLinguaDictionary.GetWordName((int)NumberCode)));
+    string DescriptionString = string.Join(" ", NumberCodes.Select(NumberCode => AstraLinguaDictionary.GetWord((int)NumberCode)));
+    string NumberCodesString = string.Join(", ", NumberCodes);
+    string AstraLinguaString = AstraLinguaConverter.NumberCodesToAstraLingua(NumberCodes);
+    Console.WriteLine();
+    Console.WriteLine("// Number Codes -> Astra Lingua");
+    Console.WriteLine("Literal:\t\t" + LiteralString);
+    Console.WriteLine("Description:\t" + DescriptionString);
+    Console.WriteLine("Number Codes:\t" + NumberCodesString);
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaString);
+}
+#endif
+
+// Astra Lingua -> Number Codes
+#if true
+{
+    // Input
+    string AstraLingua = """
+        ⊢⊢⊩⊩⊪⊪⊢⊢⊩⊢⊪⊢⊢⊢⊢⊩⊪⊩
+        """;
+
+    // Code
+    string AstraLinguaString = string.Concat(AstraLingua.Where(Ch => !char.IsWhiteSpace(Ch)));
+    BigInteger[] NumberCodes = AstraLinguaConverter.AstraLinguaToNumberCodes(AstraLingua);
+    string NumberCodesString = string.Join(", ", NumberCodes);
+    string DescriptionString = string.Join(" ", NumberCodes.Select(NumberCode => AstraLinguaDictionary.GetWord((int)NumberCode)));
+    string LiteralString = string.Join(" ", NumberCodes.Select(NumberCode => AstraLinguaDictionary.GetWordName((int)NumberCode)));
+    Console.WriteLine();
+    Console.WriteLine("// Astra Lingua -> Number Codes");
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaString);
+    Console.WriteLine("Number Codes:\t" + NumberCodesString);
+    Console.WriteLine("Description:\t" + DescriptionString);
+    Console.WriteLine("Literal:\t\t" + LiteralString);
+}
+#endif
+
+// Integer -> Astra Lingua Integer
+#if true
+{
+    // Input
+    BigInteger Integer = BigInteger.Parse(
+        "67"
+    );
+
+    // Code
+    string IntegerString = Integer.ToString();
+    string AstraLinguaIntegerString = AstraLinguaConverter.IntegerToAstraLinguaInteger(Integer);
+    Console.WriteLine();
+    Console.WriteLine("// Integer -> Astra Lingua Integer");
+    Console.WriteLine("Integer:\t\t" + IntegerString);
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaIntegerString);
+}
+#endif
+
+// Astra Lingua Integer -> Integer
+#if true
+{
+    // Input
+    string AstraLinguaRational = """
+        [⊢⊪⊢⊢⊢[
+        """;
+
+    // Code
+    string AstraLinguaIntegerString = string.Concat(AstraLinguaRational.Where(Ch => !char.IsWhiteSpace(Ch)));
+    BigReal Rational = AstraLinguaConverter.AstraLinguaIntegerToInteger(AstraLinguaRational);
+    string IntegerString = Rational.ToString();
+    Console.WriteLine();
+    Console.WriteLine("// Astra Lingua Integer -> Integer");
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaIntegerString);
+    Console.WriteLine("Integer:\t\t" + IntegerString);
+}
+#endif
+
+// Rational -> Astra Lingua Rational
+#if true
+{
+    // Input
+    BigReal Rational = BigReal.Simplify(BigReal.Parse(
+        "2.5"
+    ));
+
+    // Code
+    string RationalString = Rational.ToString();
+    string FractionString = Rational.ToRationalString();
+    string AstraLinguaRationalString = AstraLinguaConverter.RationalToAstraLinguaRational(Rational);
+    Console.WriteLine();
+    Console.WriteLine("// Rational -> Astra Lingua Rational");
+    Console.WriteLine("Rational:\t\t" + RationalString);
+    Console.WriteLine("Fraction:\t\t" + FractionString);
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaRationalString);
+}
+#endif
+
+// Astra Lingua Rational -> Rational
+#if true
+{
+    // Input
+    string AstraLinguaRational = """
+        [⊢⊪⊪>⊢⊪[
+        """;
+
+    // Code
+    string AstraLinguaRationalString = string.Concat(AstraLinguaRational.Where(Ch => !char.IsWhiteSpace(Ch)));
+    BigReal Rational = AstraLinguaConverter.AstraLinguaRationalToRational(AstraLinguaRational);
+    string FractionString = Rational.ToRationalString();
+    string RationalString = Rational.ToString();
+    Console.WriteLine();
+    Console.WriteLine("// Astra Lingua Rational -> Rational");
+    Console.WriteLine("Astra Lingua:\t" + AstraLinguaRationalString);
+    Console.WriteLine("Fraction:\t\t" + FractionString);
+    Console.WriteLine("Rational:\t\t" + RationalString);
+}
+#endif
+```
+</details>
+
 ## Overview
 
 Astra Lingua is designed as a lingua franca for different alien species to communicate with each other.
