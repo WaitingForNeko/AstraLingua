@@ -796,5 +796,17 @@ public static partial class AstraLinguaDictionary {
         /*786*/ "po (ぽ / ripple, wave)",
         /*787*/ "physically-pure (clean / untainted)",
         /*788*/ "physically-impure (contaminated / tainted)",
+        /*789*/ "prototype (unfinished / early version)",
+        /*790*/ "design (plan / idea)",
+        /*791*/ "positive-outcome (good ending / goal / aim / objective)",
+        /*792*/ "negative-outcome (bad ending / anti-goal / something to avoid)",
+        /*793*/ "positive-progress (helps goal / improvement)",
+        /*794*/ "negative-progress (hurts goal / mistake)",
+        /*795*/ "landmark (significant place / significant object)",
+        /*796*/ "home (place of origin / base / stronghold)",
+        /*797*/ "native (in place of origin / belonging to place)",
+        /*798*/ "ruins (destroyed place / rubble / debris)",
+        /*799*/ "hope (faith / optimism / persistence)",
+        /*800*/ "despair (give up / lose hope / pessimism / surrender)",
     ];
 }
