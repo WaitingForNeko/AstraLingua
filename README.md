@@ -21,7 +21,7 @@ Try Astra Lingua online at [.NET Lab](https://lab.razor.fyi/#zVXdbtMwFNYEF5ArxBO
 <summary>Expand source code</summary>
 
 ```cs
-#:package AstraLingua@1.3.0
+#:package AstraLingua@1.4.0
 
 using System;
 using System.Linq;
