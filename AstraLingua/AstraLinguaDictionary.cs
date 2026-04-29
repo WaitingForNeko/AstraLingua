@@ -17,6 +17,9 @@ public static partial class AstraLinguaDictionary {
     /// The word will be in the format <c>word name (word description)</c>.
     /// </summary>
     public static string GetWord(int NumberCode) {
+        ArgumentOutOfRangeException.ThrowIfNegative(NumberCode);
+        ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(NumberCode, Words.Length);
+
         return Words[NumberCode];
     }
     /// <summary>
