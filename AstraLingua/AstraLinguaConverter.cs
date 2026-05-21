@@ -120,6 +120,10 @@ public static class AstraLinguaConverter {
         UrgentTones = 0;
 
         for (int Index = AstraLingua.Length - 1; Index >= 0; Index--) {
+            if (char.IsWhiteSpace(AstraLingua[Index])) {
+                continue;
+            }
+
             if (AstraLingua[Index] is SymbolUncertainTone) {
                 UncertainTones++;
             }
