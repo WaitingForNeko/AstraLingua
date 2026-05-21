@@ -279,7 +279,7 @@ public static partial class AstraLinguaConverter {
                     }
 
                     if (Toned) {
-                        if (AstraLingua[Index] is SymbolUncertainTone or SymbolNeutralTone or SymbolUrgentTone) {
+                        if (Word[WordIndex] is SymbolUncertainTone or SymbolNeutralTone or SymbolUrgentTone) {
                             continue;
                         }
                     }
