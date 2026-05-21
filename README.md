@@ -15,7 +15,7 @@ a game by studio [Waiting For Neko](https://waitingforneko.com).
 
 ### Try Online
 
-Try Astra Lingua online at [.NET Lab](https://lab.razor.fyi/#zVXdbtMwFNYEF5ArxBOY9CaFkUpIbNOqTkAHaFM1TeukSnSTMOlZa9E6xXHQJsQL7DF2g7YHQIj34AV2zxUvgJLYruMkTX-YRhWp8cn5To59vu-L9b1iWfvM7zM8cr3g4bdKZXOMvY-4D-hlwBluEdoP8YvHlhUGhPZR-yzgMKqnVm6L0E9GaC8cASNeIMNaMRl6fcqB9qA3SbVqNbQXjj4AQ02_BwF6upUAUYK0KuQEcRaC9cVCCKFaDe3QccjjxSvS36Ec-sC6x6JKUqSBunFC9NtYRWsb6_HyuG7JIlFefB9wFnXWIhwYHraTVUOE3V2fUMdG9qpe3m3DEDzuTEKoIbpOmt4mHic-xezMfQu847PeHh6B4xDKqxNQtVqt6y1sQ-AxMo6QN9VGWQta9fwWVo0e0nDt3QquxZo-_QyMA3O1Coe-luFkSzd9GvhDcDuMcGgRCk7hA7uES3YxUox_84gfcRs9SdOhGKaNbDMBZoZYDNZbFejM-Rej9Y0JdOb4q3Xrq1UB2iMnsdB0THQ4egdThZadL2og27aVyK7PL-LrMr6u4ktFLrSlCl5dn18quG3bxdLMY5UgZdOnHuaOluF2BsDAaQ4iLTzyBpi5O0FnQDi0x9iLHijOT3GPXNJqwUNfy9df_0_l9B8Ywm3a4pzKn0Zue2kd3YiGl7KPMstKKV8Q3XREGZ_xK6vKNLSgu49ZAM5Ey2vriS9UiyUtoIpWstShn4TkpLMOYCJzlSqSUp8WEXPE_2IcKznGKTQTGWpaqX0syk6zSLHZa43PMvLsuR_gWLpDw_e7hrt357Z0c6CFzi47mM_hDwAPkdZ8mbMr6ki-5HSQJqe5AdWnSeZl_Cw7v4UtbUbmlRE2xTV1wKYw5IMygzHHJEJum4zGQ3Jy5siAaTbP3OfCbabYjSxcPiMBeMNw_KnKA6SLFTtV5qW51JNZKa-SQcdg3JwMKp3KFA7JFDX_9HaKgfLoFDB9louyNvP6Yq_Ttz0T_-Z3u6ut5G5-u8uw4pb9bsI_RbpSx1tYHbPrcBmvPMiZ_8JueeO0LxeaZPruHRbSd_fv_fjz6_fP_oO771dOV_4C)!
+Try Astra Lingua online at [.NET Lab](https://lab.razor.fyi/#zVjNbtNAEBaCA_iEeIKte3EgOBISbdUoFZACahVVVWMpEqESi7NNViS7Yb1GrRAnTu1btAdQe-fKndfIkyD_Znf9n7SUxJKz4_nGszvffI5X-1XXtH1GhwxOTNt59KO-ujmF9ic4ROClwxnsYDJ04YvHmuY6mAxB98ThaNKURmYHk8-Kac-dIIZtJzILwSLT62OOyAAN5q5aowH23MlHxECbDpADnm4FQBAgtVV8BDhzkfZVAwCARgPskKnL_cErPNwhHA0R6x-GUYIgLdD3HbzPRh2sbaz7w8OmFgXx_PzfDmdeZh3MEYPjbjBqhWZzl2Ji6ECvi-HNLhojmxtzE2iFWQdJb2ObY0ogOzHfIt6jbLAHJ8gwMOG1OahWqzXFFLaRYzM89ZA3lUZRCkL09BTqSg4yXLh3DBdsbUq-IMYRM4UIFhU8jGToNiUOHSOzxzBHHUyQkXlBL-CSno0My7_5nntfHTyRCZENFIq2GUEThcyGi-nG-EQVsvHi9GJ8ogy1pvZNW0VkgI_8hhNR3iKJWeQ2XLLOoAV0XY-bbXZ24R-X_nHlH7HlQhjGxqvZ2WUM13U9u0XT2BWSs02JDbkheJi9EWLIaI-8nlixR5CZO05vhDnqTqHtXYi5n6MiqeQVjBYV_MXbX2tb_QfCcJvyWFEB8sitX0Mn3VAnLykkxQImKUBIeFUhI3vJp24cpiUYzX3IHGTMe3ptPdCHWnZrh9CYXlEoiwamqOJJJVCRqR0bOkmPmtBmhOfFuFawjDl0Cz2EekkzWZynaphs4ReSL1P25NofQL-Nx8ozoK8ofb-yvKtFzVT5KINqan-A4BgIyRepfEyfiDMpGcgEVScQ56kSehltS9ZvCXkryb5i2kp8ixdZbZDoQpHQqKUKTWYXT6ZjfHRiRAZVdJ6Zz0PVyZGdKHBxnULAGwb9R1caQA6WrViJm6bSL_KSNCsyGgrrKrKosCo5PIpcBAbIE8qGRosnQOX1XJy9iRSyVU-cfCkWVte9q63gV3XhS3DjlpVvzsKYeoXat3CPlO_GZVQzrf5L6OY_IH-Zlst9vbMYJM7Y_zvI0aD89soNve3NTs9np-flekNOvfT-gkWJ5G1ROZB6PeXVbcm3jpw1X4Jt2Uj5fjG2YP1U5uRkXWljrqh6Co8gpNR1vRN0IYSQunRlZfFNgXRK5BLAoglKZCZfW4ggVvmlzSFI1TJf487R7l3mkncP7v_-fvrzz_DhvQ93ju_8BQ)!
 
 <details>
 <summary>Expand source code</summary>
@@ -44,10 +44,10 @@ using ExtendedNumerics;
     string AstraLinguaString = AstraLinguaConverter.NumberCodesToAstraLingua(NumberCodes);
     Console.WriteLine();
     Console.WriteLine("// Number Codes -> Astra Lingua");
-    Console.WriteLine("Literal:\t\t" + LiteralString);
-    Console.WriteLine("Description:\t" + DescriptionString);
-    Console.WriteLine("Number Codes:\t" + NumberCodesString);
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaString);
+    Console.WriteLine("Literal:\t\t\t" + LiteralString);
+    Console.WriteLine("Description:\t\t" + DescriptionString);
+    Console.WriteLine("Number Codes:\t\t" + NumberCodesString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaString);
 }
 #endif
 
@@ -67,10 +67,10 @@ using ExtendedNumerics;
     string LiteralString = string.Join(" ", NumberCodes.Select(NumberCode => AstraLinguaDictionary.GetWordName((int)NumberCode)));
     Console.WriteLine();
     Console.WriteLine("// Astra Lingua -> Number Codes");
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaString);
-    Console.WriteLine("Number Codes:\t" + NumberCodesString);
-    Console.WriteLine("Description:\t" + DescriptionString);
-    Console.WriteLine("Literal:\t\t" + LiteralString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaString);
+    Console.WriteLine("Number Codes:\t\t" + NumberCodesString);
+    Console.WriteLine("Description:\t\t" + DescriptionString);
+    Console.WriteLine("Literal:\t\t\t" + LiteralString);
 }
 #endif
 
@@ -87,8 +87,8 @@ using ExtendedNumerics;
     string AstraLinguaIntegerString = AstraLinguaConverter.IntegerToAstraLinguaInteger(Integer);
     Console.WriteLine();
     Console.WriteLine("// Integer -> Astra Lingua Integer");
-    Console.WriteLine("Integer:\t\t" + IntegerString);
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaIntegerString);
+    Console.WriteLine("Integer:\t\t\t" + IntegerString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaIntegerString);
 }
 #endif
 
@@ -106,8 +106,8 @@ using ExtendedNumerics;
     string IntegerString = Rational.ToString();
     Console.WriteLine();
     Console.WriteLine("// Astra Lingua Integer -> Integer");
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaIntegerString);
-    Console.WriteLine("Integer:\t\t" + IntegerString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaIntegerString);
+    Console.WriteLine("Integer:\t\t\t" + IntegerString);
 }
 #endif
 
@@ -125,9 +125,9 @@ using ExtendedNumerics;
     string AstraLinguaRationalString = AstraLinguaConverter.RationalToAstraLinguaRational(Rational);
     Console.WriteLine();
     Console.WriteLine("// Rational -> Astra Lingua Rational");
-    Console.WriteLine("Rational:\t\t" + RationalString);
-    Console.WriteLine("Fraction:\t\t" + FractionString);
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaRationalString);
+    Console.WriteLine("Rational:\t\t\t" + RationalString);
+    Console.WriteLine("Fraction:\t\t\t" + FractionString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaRationalString);
 }
 #endif
 
@@ -146,9 +146,43 @@ using ExtendedNumerics;
     string RationalString = Rational.ToString();
     Console.WriteLine();
     Console.WriteLine("// Astra Lingua Rational -> Rational");
-    Console.WriteLine("Astra Lingua:\t" + AstraLinguaRationalString);
-    Console.WriteLine("Fraction:\t\t" + FractionString);
-    Console.WriteLine("Rational:\t\t" + RationalString);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaRationalString);
+    Console.WriteLine("Fraction:\t\t\t" + FractionString);
+    Console.WriteLine("Rational:\t\t\t" + RationalString);
+}
+#endif
+
+// Astra Lingua -> Transliterated Astra Lingua
+#if true
+{
+    // Input
+    string AstraLingua = """
+        ⊢⊢⊩⊩⊪⊪⊢⊢⊩⊢⊪⊢⊢⊢⊢⊩⊪⊩≡≡
+        """;
+
+    // Code
+    string TransliteratedAstraLinguaString = AstraLinguaConverter.TonedAstraLinguaToTransliteratedTonedAstraLingua(AstraLingua);
+    Console.WriteLine();
+    Console.WriteLine("// Astra Lingua -> Transliterated Astra Lingua");
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLingua);
+    Console.WriteLine("Transliterated:\t\t" + TransliteratedAstraLinguaString);
+}
+#endif
+
+// Transliterated Astra Lingua -> Astra Lingua
+#if true
+{
+    // Input
+    string TransliteratedAstraLingua = """
+        aaoouu aaoauaaaaouo!!
+        """;
+
+    // Code
+    string AstraLinguaString = AstraLinguaConverter.TransliteratedTonedAstraLinguaToTonedAstraLingua(TransliteratedAstraLingua);
+    Console.WriteLine();
+    Console.WriteLine("// Transliterated Astra Lingua -> Astra Lingua");
+    Console.WriteLine("Transliterated:\t\t" + TransliteratedAstraLingua);
+    Console.WriteLine("Astra Lingua:\t\t" + AstraLinguaString);
 }
 #endif
 ```
