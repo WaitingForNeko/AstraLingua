@@ -41,6 +41,7 @@ public class ConvertTests {
     public void NumberTest() {
         (BigReal Number, string AstraLingua)[] TestData = [
             (BigReal.Parse("3.5"), "[⊢⊪⊢>⊢⊪["),
+            (BigReal.Parse("3.0"), "[⊢⊩["),
         ];
 
         foreach (var TestItem in TestData) {
@@ -75,7 +76,7 @@ public class ConvertTests {
         foreach (var TestItem in TestData) {
             string OutputResult = AstraLinguaConverter.AstraLinguaToTransliteratedAstraLingua(TestItem.AstraLingua);
             OutputResult.ShouldBe(TestItem.TransliteratedAstraLingua);
-            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaToAstraLingua(TestItem.TransliteratedAstraLingua);
+            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaToAstraLingua(OutputResult);
             InputResult.ShouldBe(RemoveWhitespace(TestItem.AstraLingua));
         }
     }
@@ -89,7 +90,7 @@ public class ConvertTests {
         foreach (var TestItem in TestData) {
             string OutputResult = AstraLinguaConverter.TonedAstraLinguaToTransliteratedTonedAstraLingua(TestItem.TonedAstraLingua);
             OutputResult.ShouldBe(TestItem.TransliteratedTonedAstraLingua);
-            string InputResult = AstraLinguaConverter.TransliteratedTonedAstraLinguaToTonedAstraLingua(TestItem.TransliteratedTonedAstraLingua);
+            string InputResult = AstraLinguaConverter.TransliteratedTonedAstraLinguaToTonedAstraLingua(OutputResult);
             InputResult.ShouldBe(RemoveWhitespace(TestItem.TonedAstraLingua));
         }
     }
@@ -97,12 +98,13 @@ public class ConvertTests {
     public void TransliterateNumberTest() {
         (string AstraLinguaRational, string TransliteratedAstraLinguaRational)[] TestData = [
             ("[⊢⊪⊢>⊢⊪[", "[aua/au]"),
+            ("[⊢⊪⊢[", "[aua]"),
         ];
 
         foreach (var TestItem in TestData) {
             string OutputResult = AstraLinguaConverter.AstraLinguaRationalToTransliteratedAstraLinguaRational(TestItem.AstraLinguaRational);
             OutputResult.ShouldBe(TestItem.TransliteratedAstraLinguaRational);
-            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaRationalToAstraLinguaRational(TestItem.TransliteratedAstraLinguaRational);
+            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaRationalToAstraLinguaRational(OutputResult);
             InputResult.ShouldBe(TestItem.AstraLinguaRational);
         }
     }
