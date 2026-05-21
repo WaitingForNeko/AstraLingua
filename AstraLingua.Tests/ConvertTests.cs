@@ -67,26 +67,47 @@ public class ConvertTests {
     }
     [Fact]
     public void TransliterateTest() {
-        string[] TestData = [
-            "⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪",
-            "  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪",
+        (string AstraLingua, string TransliteratedAstraLingua)[] TestData = [
+            ("⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪", "aaoouu aaoouu"),
+            ("  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪", "aaoouu aaoouu"),
         ];
 
         foreach (var TestItem in TestData) {
-            string OutputResult = AstraLinguaConverter.AstraLinguaToTransliteratedAstraLingua(TestItem);
-            _ = OutputResult;
+            string OutputResult = AstraLinguaConverter.AstraLinguaToTransliteratedAstraLingua(TestItem.AstraLingua);
+            OutputResult.ShouldBe(TestItem.TransliteratedAstraLingua);
+            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaToAstraLingua(TestItem.TransliteratedAstraLingua);
+            InputResult.ShouldBe(RemoveWhitespace(TestItem.AstraLingua));
         }
     }
     [Fact]
     public void TransliterateTonedTest() {
-        string[] TestData = [
-            "⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪=–=",
-            "  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪–– =",
+        (string TonedAstraLingua, string TransliteratedTonedAstraLingua)[] TestData = [
+            ("⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪=–=", "aaoouu aaoouu.?."),
+            ("  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪–– ≡", "aaoouu aaoouu??!"),
         ];
 
         foreach (var TestItem in TestData) {
-            string OutputResult = AstraLinguaConverter.TonedAstraLinguaToTransliteratedTonedAstraLingua(TestItem);
-            _ = OutputResult;
+            string OutputResult = AstraLinguaConverter.TonedAstraLinguaToTransliteratedTonedAstraLingua(TestItem.TonedAstraLingua);
+            OutputResult.ShouldBe(TestItem.TransliteratedTonedAstraLingua);
+            string InputResult = AstraLinguaConverter.TransliteratedTonedAstraLinguaToTonedAstraLingua(TestItem.TransliteratedTonedAstraLingua);
+            InputResult.ShouldBe(RemoveWhitespace(TestItem.TonedAstraLingua));
         }
+    }
+    [Fact]
+    public void TransliterateNumberTest() {
+        (string AstraLinguaRational, string TransliteratedAstraLinguaRational)[] TestData = [
+            ("[⊢⊪⊢>⊢⊪[", "[aua/au]"),
+        ];
+
+        foreach (var TestItem in TestData) {
+            string OutputResult = AstraLinguaConverter.AstraLinguaRationalToTransliteratedAstraLinguaRational(TestItem.AstraLinguaRational);
+            OutputResult.ShouldBe(TestItem.TransliteratedAstraLinguaRational);
+            string InputResult = AstraLinguaConverter.TransliteratedAstraLinguaRationalToAstraLinguaRational(TestItem.TransliteratedAstraLinguaRational);
+            InputResult.ShouldBe(TestItem.AstraLinguaRational);
+        }
+    }
+
+    private static string RemoveWhitespace(string String) {
+        return string.Concat(String.Where(Char => !char.IsWhiteSpace(Char)));
     }
 }
