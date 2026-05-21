@@ -278,6 +278,12 @@ public static partial class AstraLinguaConverter {
                         continue;
                     }
 
+                    if (Toned) {
+                        if (AstraLingua[Index] is SymbolUncertainTone or SymbolNeutralTone or SymbolUrgentTone) {
+                            continue;
+                        }
+                    }
+
                     ResultBuilder.Append(Word[WordIndex] switch {
                         SymbolZero => SymbolTransliteratedZero,
                         SymbolOne => SymbolTransliteratedOne,
