@@ -223,6 +223,16 @@ but standard meanings can be found in the Astra Lingua Dictionary. For example:
 - `18` - me (speaker / self)
 - `149` - storm (atmospheric disturbance / hazard)
 
+Astra Lingua can be transliterated to English characters using the following symbols:
+- `a` (`⊢`)
+- `o` (`⊩`)
+- `u` (`⊪`)
+- `[…]` (`[…[`)
+- `/` (`>`)
+- `?` (`–`)
+- `.` (`=`)
+- `!` (`≡`)
+
 To learn more about Astra Lingua, you can [read the cheat sheet](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf) or [watch the video](https://youtu.be/EdC5M-olroU).
 
 ## Examples
@@ -232,27 +242,33 @@ Some examples attempting to translate English to Astra Lingua:
 #### "Welcome"
 - Number Codes: `8 (hello)`
 - Astra Lingua: `⊢⊢⊩⊩⊪⊪`
+- Transliterated: `aaoouu`
 
 #### "Astra Lingua"
 - Number Codes: `713 (Astra Lingua)`
 - Astra Lingua: `⊢⊢⊩⊢⊩⊪⊢⊢⊢⊩⊪⊪`
+- Transliterated: `aaoaouaaaouu`
 
 #### "Who are you?" (Konekomi Dialect)
 - Number Codes: `19 (you) 1 (something) 22 (question) ? (uncertain) ? (uncertain)`
 - Astra Lingua: `⊢⊢⊪⊪⊩⊢⊩⊪⊢⊢⊢⊪⊪⊢⊢––`
+- Transliterated: `aauuoa oua aauuaa??`
 
 #### "Why is the sky blue?"
 - Number Codes: `17 (confuse) 627 (daylight) 508 (blue) 22 (question)`
 - Astra Lingua: `⊢⊢⊪⊪⊩⊪⊢⊢⊩⊢⊪⊪⊢⊢⊪⊩⊪⊩⊢⊢⊪⊢⊩⊢⊢⊪⊢⊩⊪⊢⊢⊢⊪⊪⊢⊢`
+- Transliterated: `aauuou aaoauuaauouo aauaoaauaoua aauuaa`
 
 #### "3.5"
 - Fraction: `7 / 2`
 - Balanced Ternary Fraction: `1T1 / 1T`
 - Astra Lingua: `[⊢⊪⊢>⊢⊪[`
+- Transliterated: `[aua/au]`
 
 #### "Three Point Five"
 - Number Codes: `26 (one) 28 (minus-one) 26 (one) 13 (division) 26 (one) 28 (minus-one)`
 - Astra Lingua: `⊢⊢⊩⊪⊩⊪⊢⊢⊩⊪⊩⊢⊢⊢⊩⊪⊩⊪⊢⊢⊢⊩⊪⊢⊢⊢⊩⊪⊩⊪⊢⊢⊩⊪⊩⊢`
+- Transliterated: `aaouou aaouoa aaouou aaaoua aaouou aaouoa`
 
 ## License
 
