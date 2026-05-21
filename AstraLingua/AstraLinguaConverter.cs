@@ -97,6 +97,7 @@ public static class AstraLinguaConverter {
     /// </summary>
     public static BigInteger AstraLinguaIntegerToInteger(scoped ReadOnlySpan<char> AstraLinguaInteger) {
         // Strip optional brackets
+        AstraLinguaInteger = AstraLinguaInteger.Trim();
         if (AstraLinguaInteger.StartsWith(SymbolNumber) && AstraLinguaInteger.EndsWith(SymbolNumber)) {
             AstraLinguaInteger = AstraLinguaInteger[1..^1];
         }
@@ -120,6 +121,7 @@ public static class AstraLinguaConverter {
     /// </summary>
     public static BigReal AstraLinguaRationalToRational(scoped ReadOnlySpan<char> AstraLinguaRational) {
         // Strip optional brackets
+        AstraLinguaRational = AstraLinguaRational.Trim();
         if (AstraLinguaRational.StartsWith(SymbolNumber) && AstraLinguaRational.EndsWith(SymbolNumber)) {
             AstraLinguaRational = AstraLinguaRational[1..^1];
         }
