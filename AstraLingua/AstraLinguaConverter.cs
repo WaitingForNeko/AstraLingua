@@ -41,6 +41,34 @@ public static class AstraLinguaConverter {
     /// The symbol used for urgency or emphasis, specific to the Konekomi Dialect.
     /// </summary>
     public const char SymbolUrgentTone = '≡';
+    /// <summary>
+    /// The symbol used for the digit 1 when transliterated to English.
+    /// </summary>
+    public const char SymbolTransliteratedOne = 'a';
+    /// <summary>
+    /// The symbol used for the digit 0 when transliterated to English.
+    /// </summary>
+    public const char SymbolTransliteratedZero = 'o';
+    /// <summary>
+    /// The symbol used for the digit -1 / T when transliterated to English.
+    /// </summary>
+    public const char SymbolTransliteratedMinusOne = 'u';
+    /// <summary>
+    /// The symbol used for a space when transliterating to English.
+    /// </summary>
+    public const char SymbolTransliteratedSpace = ' ';
+    /// <summary>
+    /// The symbol used for uncertainty or questioning when transliterating to English, specific to the Konekomi Dialect.
+    /// </summary>
+    public const char SymbolTransliteratedUncertainTone = '?';
+    /// <summary>
+    /// The symbol used for neutrality or expressionlessness when transliterating to English, specific to the Konekomi Dialect.
+    /// </summary>
+    public const char SymbolTransliteratedNeutralTone = '.';
+    /// <summary>
+    /// The symbol used for urgency or emphasis when transliterating to English, specific to the Konekomi Dialect.
+    /// </summary>
+    public const char SymbolTransliteratedUrgentTone = '!';
 
     /// <summary>
     /// Converts a sequence of number codes to a sequence of Astra Lingua.
@@ -138,6 +166,121 @@ public static class AstraLinguaConverter {
             }
         }
         return "";
+    }
+    public static string AstraLinguaToTransliteratedAstraLingua(scoped ReadOnlySpan<char> AstraLingua) {
+        StringBuilder ResultBuilder = new(AstraLingua.Length);
+
+        int WordStartIndex = 0;
+        bool IsUnfinishedWord = false;
+        for (int Index = 0; Index < AstraLingua.Length; Index++) {
+            // Get current block parts
+            char BlockPart1;
+            {
+                while (char.IsWhiteSpace(AstraLingua[Index])) {
+                    Index++;
+                }
+                BlockPart1 = AstraLingua[Index];
+            }
+            Index++;
+            char BlockPart2;
+            {
+                while (char.IsWhiteSpace(AstraLingua[Index])) {
+                    Index++;
+                }
+                BlockPart2 = AstraLingua[Index];
+            }
+            Index++;
+            char BlockPart3;
+            {
+                while (char.IsWhiteSpace(AstraLingua[Index])) {
+                    Index++;
+                }
+                BlockPart3 = AstraLingua[Index];
+            }
+
+            // Get if block is positive or negative or zero
+            static int GetBlockSign(char BlockPart1, char BlockPart2, char BlockPart3) {
+                if (BlockPart1 is SymbolZero) {
+                    if (BlockPart2 is SymbolZero) {
+                        if (BlockPart3 is SymbolZero) {
+                            return 0;
+                        }
+                        return BalancedTritSymbolToBalancedTrit(BlockPart3);
+                    }
+                    return BalancedTritSymbolToBalancedTrit(BlockPart2);
+                }
+                return BalancedTritSymbolToBalancedTrit(BlockPart1);
+            }
+            int BlockSign = GetBlockSign(BlockPart1, BlockPart2, BlockPart3);
+
+            // Last block in word
+            if (BlockSign < 0) {
+                // Extract word
+                ReadOnlySpan<char> Word = AstraLingua[WordStartIndex..(Index + 1)];
+                // Add space after previous transliterated word
+                if (ResultBuilder.Length > 0) {
+                    ResultBuilder.Append(SymbolTransliteratedSpace);
+                }
+                // Transliterate word
+                foreach (char BalancedTritSymbol in Word) {
+                    if (char.IsWhiteSpace(BalancedTritSymbol)) {
+                        continue;
+                    }
+
+                    ResultBuilder.Append(BalancedTritSymbol switch {
+                        SymbolZero => SymbolTransliteratedZero,
+                        SymbolOne => SymbolTransliteratedOne,
+                        SymbolMinusOne => SymbolTransliteratedMinusOne,
+                        _ => throw new NotImplementedException($"Unsupported character: '{BalancedTritSymbol}'")
+                    });
+                }
+                // Move to next word
+                WordStartIndex = Index + 1;
+            }
+
+            // Track unfinished words
+            IsUnfinishedWord = BlockSign >= 0;
+        }
+
+        // Ensure each word is finished
+        if (IsUnfinishedWord) {
+            throw new ArgumentException("Unfinished word", nameof(AstraLingua));
+        }
+
+        return ResultBuilder.ToString();
+    }
+    public static string TransliteratedAstraLinguaToAstraLingua(scoped ReadOnlySpan<char> TransliteratedAstraLingua) {
+        throw new NotImplementedException();
+    }
+    public static string TonedAstraLinguaToTransliteratedTonedAstraLingua(scoped ReadOnlySpan<char> AstraLingua) {
+        StringBuilder ToneBuilder = new();
+
+        string TransliteratedAstraLingua = "";
+
+        for (int Index = AstraLingua.Length - 1; Index >= 0; Index--) {
+            if (char.IsWhiteSpace(AstraLingua[Index])) {
+                continue;
+            }
+
+            if (AstraLingua[Index] is SymbolUncertainTone) {
+                ToneBuilder.Append(SymbolTransliteratedUncertainTone);
+            }
+            else if (AstraLingua[Index] is SymbolNeutralTone) {
+                ToneBuilder.Append(SymbolTransliteratedNeutralTone);
+            }
+            else if (AstraLingua[Index] is SymbolUrgentTone) {
+                ToneBuilder.Append(SymbolTransliteratedUrgentTone);
+            }
+            else {
+                TransliteratedAstraLingua = AstraLinguaToTransliteratedAstraLingua(AstraLingua[..(Index + 1)]);
+                break;
+            }
+        }
+
+        return TransliteratedAstraLingua + ReverseString(ToneBuilder.ToString());
+    }
+    public static string TransliteratedTonedAstraLinguaToTonedAstraLingua(scoped ReadOnlySpan<char> TransliteratedTonedAstraLingua) {
+        throw new NotImplementedException();
     }
 
     private static sbyte[] IntegersToSentence(scoped ReadOnlySpan<BigInteger> Integers) {
@@ -385,14 +528,7 @@ public static class AstraLinguaConverter {
         StringBuilder ResultBuilder = new(capacity: BalancedTrits.Length);
 
         foreach (sbyte BalancedTrit in BalancedTrits) {
-            char BalancedTritSymbol = BalancedTrit switch {
-                0 => SymbolZero,
-                1 => SymbolOne,
-                -1 => SymbolMinusOne,
-                _ => throw new ArgumentOutOfRangeException(nameof(BalancedTrits), "Balanced trit must be 0, 1 or -1")
-            };
-
-            ResultBuilder.Append(BalancedTritSymbol);
+            ResultBuilder.Append(BalancedTritToBalancedTritSymbol(BalancedTrit));
         }
 
         return ResultBuilder.ToString();
@@ -412,12 +548,7 @@ public static class AstraLinguaConverter {
                 continue;
             }
 
-            BalancedTrits.Add(BalancedTernaryString[Index] switch {
-                SymbolZero => 0,
-                SymbolOne => 1,
-                SymbolMinusOne => -1,
-                _ => throw new NotImplementedException($"Unsupported character: '{BalancedTernaryString[Index]}'")
-            });
+            BalancedTrits.Add(BalancedTritSymbolToBalancedTrit(BalancedTernaryString[Index]));
         }
 
         if (BalancedTrits.Count == 0) {
@@ -434,5 +565,29 @@ public static class AstraLinguaConverter {
         }
 
         return (ParseBalancedTernary(BalancedTernaryRationalString[..SeparatorIndex]), ParseBalancedTernary(BalancedTernaryRationalString[(SeparatorIndex + 1)..]));
+    }
+    private static char BalancedTritToBalancedTritSymbol(sbyte BalancedTrit) {
+        return BalancedTrit switch {
+            0 => SymbolZero,
+            1 => SymbolOne,
+            -1 => SymbolMinusOne,
+            _ => throw new ArgumentOutOfRangeException(nameof(BalancedTrit), "Balanced trit must be 0, 1 or -1")
+        };
+    }
+    private static sbyte BalancedTritSymbolToBalancedTrit(char BalancedTritSymbol) {
+        return BalancedTritSymbol switch {
+            SymbolZero => 0,
+            SymbolOne => 1,
+            SymbolMinusOne => -1,
+            _ => throw new NotImplementedException($"Unsupported character: '{BalancedTritSymbol}'")
+        };
+    }
+    private static string ReverseString(string String) {
+        return string.Create(String.Length, String, static void (scoped Span<char> Chars, string State) => {
+            int Position = 0;
+            for (int Index = State.Length - 1; Index >= 0; Index--) {
+                Chars[Position++] = State[Index];
+            }
+        });
     }
 }

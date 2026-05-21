@@ -65,4 +65,28 @@ public class ConvertTests {
             WordDescriptionResult.ShouldBe(TestItem.WordDescription);
         }
     }
+    [Fact]
+    public void TransliterateTest() {
+        string[] TestData = [
+            "⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪",
+            "  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪",
+        ];
+
+        foreach (var TestItem in TestData) {
+            string OutputResult = AstraLinguaConverter.AstraLinguaToTransliteratedAstraLingua(TestItem);
+            _ = OutputResult;
+        }
+    }
+    [Fact]
+    public void TransliterateTonedTest() {
+        string[] TestData = [
+            "⊢⊢⊩⊩⊪⊪⊢⊢⊩⊩⊪⊪=–=",
+            "  \n \u2028 ⊢⊢⊩⊩ ⊪⊪\r\n\t ⊢⊢⊩⊩⊪⊪–– =",
+        ];
+
+        foreach (var TestItem in TestData) {
+            string OutputResult = AstraLinguaConverter.TonedAstraLinguaToTransliteratedTonedAstraLingua(TestItem);
+            _ = OutputResult;
+        }
+    }
 }
