@@ -105,6 +105,9 @@ public static partial class AstraLinguaConverter {
     /// <summary>
     /// Converts a sequence of Astra Lingua to a sequence of Astra Lingua in the Konekomi Dialect.
     /// </summary>
+    /// <remarks>
+    /// Note: The tones will be placed at the end of the output.
+    /// </remarks>
     public static string AstraLinguaToTonedAstraLingua(scoped ReadOnlySpan<char> AstraLingua, int UncertainTones = 0, int NeutralTones = 0, int UrgentTones = 0) {
         return string.Concat(
             AstraLingua,
@@ -116,12 +119,17 @@ public static partial class AstraLinguaConverter {
     /// <summary>
     /// Converts a sequence of Astra Lingua in the Konekomi Dialect to a sequence of Astra Lingua.
     /// </summary>
+    /// <remarks>
+    /// Note: The tones will be added to the counters regardless of their position in the input.
+    /// </remarks>
     public static string TonedAstraLinguaToAstraLingua(scoped ReadOnlySpan<char> AstraLingua, out int UncertainTones, out int NeutralTones, out int UrgentTones) {
         UncertainTones = 0;
         NeutralTones = 0;
         UrgentTones = 0;
 
-        for (int Index = AstraLingua.Length - 1; Index >= 0; Index--) {
+        StringBuilder ResultBuilder = new(AstraLingua.Length);
+
+        for (int Index = 0; Index < AstraLingua.Length; Index++) {
             if (char.IsWhiteSpace(AstraLingua[Index])) {
                 continue;
             }
@@ -136,10 +144,11 @@ public static partial class AstraLinguaConverter {
                 UrgentTones++;
             }
             else {
-                return AstraLingua[..(Index + 1)].ToString();
+                ResultBuilder.Append(AstraLingua[Index]);
             }
         }
-        return "";
+
+        return ResultBuilder.ToString();
     }
 
     private static sbyte[] IntegersToSentence(scoped ReadOnlySpan<BigInteger> Integers) {
