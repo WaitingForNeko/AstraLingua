@@ -3,7 +3,10 @@ using System.Numerics;
 
 namespace AstraLingua;
 
-public static partial class AstraLinguaConverter {
+/// <summary>
+/// Contains methods to convert between standard units and standard Astra Lingua units.
+/// </summary>
+public static class AstraLinguaUnits {
     private static readonly BigReal MetersInOneSiri = new(2_380_000_000); // 2,380,000,000
     private static readonly BigReal SecondsInOneLumi = new(397, 50); // 7.94
     private static readonly BigReal GramsInOneKora = new(BigInteger.Parse("4102000000000000000000000000000000")); // 4.102E33

@@ -116,9 +116,9 @@ public class ConvertTests {
         ];
 
         foreach (var TestItem in TestData) {
-            BigReal OutputResult = AstraLinguaConverter.SiriToMeters(TestItem.Siri);
+            BigReal OutputResult = AstraLinguaUnits.SiriToMeters(TestItem.Siri);
             OutputResult.ShouldBe(TestItem.Meters);
-            BigReal InputResult = AstraLinguaConverter.MetersToSiri(OutputResult);
+            BigReal InputResult = AstraLinguaUnits.MetersToSiri(OutputResult);
             InputResult.ShouldBe(TestItem.Siri);
         }
     }
@@ -130,9 +130,9 @@ public class ConvertTests {
         ];
 
         foreach (var TestItem in TestData) {
-            BigReal OutputResult = AstraLinguaConverter.LumiToSeconds(TestItem.Lumi);
+            BigReal OutputResult = AstraLinguaUnits.LumiToSeconds(TestItem.Lumi);
             OutputResult.ShouldBe(TestItem.Seconds);
-            BigReal InputResult = AstraLinguaConverter.SecondsToLumi(OutputResult);
+            BigReal InputResult = AstraLinguaUnits.SecondsToLumi(OutputResult);
             InputResult.ShouldBe(TestItem.Lumi);
         }
     }
@@ -144,9 +144,9 @@ public class ConvertTests {
         ];
 
         foreach (var TestItem in TestData) {
-            BigReal OutputResult = AstraLinguaConverter.KoraToGrams(TestItem.Kora);
+            BigReal OutputResult = AstraLinguaUnits.KoraToGrams(TestItem.Kora);
             OutputResult.ShouldBe(TestItem.Grams);
-            BigReal InputResult = AstraLinguaConverter.GramsToKora(OutputResult);
+            BigReal InputResult = AstraLinguaUnits.GramsToKora(OutputResult);
             InputResult.ShouldBe(TestItem.Kora);
         }
     }
@@ -158,9 +158,9 @@ public class ConvertTests {
         ];
 
         foreach (var TestItem in TestData) {
-            BigReal OutputResult = AstraLinguaConverter.SolaToKelvin(TestItem.Sola);
+            BigReal OutputResult = AstraLinguaUnits.SolaToKelvin(TestItem.Sola);
             OutputResult.ShouldBe(TestItem.Kelvin);
-            BigReal InputResult = AstraLinguaConverter.KelvinToSola(OutputResult);
+            BigReal InputResult = AstraLinguaUnits.KelvinToSola(OutputResult);
             InputResult.ShouldBe(TestItem.Sola);
         }
     }
