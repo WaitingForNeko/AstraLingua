@@ -7,10 +7,10 @@ namespace AstraLingua;
 /// Contains methods to convert between standard units and standard Astra Lingua units.
 /// </summary>
 public static class AstraLinguaUnits {
-    private static readonly BigReal MetersInOneSiri = new(2_380_000_000); // 2,380,000,000
+    private static readonly BigReal MetersInOneSiri = new(2_380_000_000); // 2_380_000_000
     private static readonly BigReal SecondsInOneLumi = new(397, 50); // 7.94
     private static readonly BigReal GramsInOneKora = new(BigInteger.Parse("4102000000000000000000000000000000")); // 4.102E33
-    private static readonly BigReal KelvinInOneSola = new(9_940); // 9,940
+    private static readonly BigReal KelvinInOneSola = new(9_940); // 9_940
 
     /// <summary>
     /// Converts from meters (a metric unit of length) to Siri (the diameter of Sirius A).<br/>

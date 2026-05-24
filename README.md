@@ -253,7 +253,7 @@ Astra Lingua uses standard units based on Sirius A, the brightest star in the ni
 
 For example:
 - `10` kilometers is approximately `0.0000042` Siri
-- `10` years is approximately `40,000,000` Lumi
+- `10` years is approximately `40_000_000` Lumi
 - `10` kilograms is approximately `0.0000000000000000000000000000024378` Kora
 - `10` degrees Celsius is approximately `0.0284859` Sola
 
