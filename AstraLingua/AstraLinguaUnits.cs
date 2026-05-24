@@ -10,7 +10,7 @@ public static class AstraLinguaUnits {
     private static readonly BigReal MetersInOneSiri = new(2_380_000_000); // 2,380,000,000
     private static readonly BigReal SecondsInOneLumi = new(397, 50); // 7.94
     private static readonly BigReal GramsInOneKora = new(BigInteger.Parse("4102000000000000000000000000000000")); // 4.102E33
-    private static readonly BigReal KelvinInOneSola = new(198_803, 20); // 9,940.15
+    private static readonly BigReal KelvinInOneSola = new(9_940); // 9,940
 
     /// <summary>
     /// Converts from meters (a metric unit of length) to Siri (the diameter of Sirius A).<br/>
@@ -56,14 +56,14 @@ public static class AstraLinguaUnits {
     }
     /// <summary>
     /// Converts from Kelvin (a metric unit of temperature) to Sola (the surface temperature of Sirius A).<br/>
-    /// <c>1</c> Kelvin = <c>~0.0001006021</c> Sola.
+    /// <c>1</c> Kelvin = <c>~0.0001006036</c> Sola.
     /// </summary>
     public static BigReal KelvinToSola(BigReal Kelvin) {
         return Kelvin / KelvinInOneSola;
     }
     /// <summary>
     /// Converts from Sola (the surface temperature of Sirius A) to Kelvin (a metric unit of temperature).<br/>
-    /// <c>1</c> Sola = <c>9_940.15</c> Kelvin.
+    /// <c>1</c> Sola = <c>9_940</c> Kelvin.
     /// </summary>
     public static BigReal SolaToKelvin(BigReal Sola) {
         return Sola * KelvinInOneSola;

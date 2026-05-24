@@ -769,7 +769,7 @@
 701: "Siri (unit of length / diameter of Sirius A / ~2,380,000 km)"
 702: "Lumi (unit of time / time for light to travel 1 Siri / ~7.94 seconds)"
 703: "Kora (unit of mass / mass of Sirius A / ~4.102E30 kg / ~2.063x mass of the Sun)"
-704: "Sola (unit of temperature / surface temperature of Sirius A / 9,667 °C)"
+704: "Sola (unit of temperature / surface temperature of Sirius A offset from absolute zero / 9,940 °K)"
 705: "Saka (3**3 / 27 / balanced ternary 1,000)"
 706: "Roka (3**6 / 729 / balanced ternary 1,000,000)"
 707: "Kuka (3**9 / 19,683 / balanced ternary 1,000,000,000)"

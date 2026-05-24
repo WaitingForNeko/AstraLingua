@@ -153,8 +153,8 @@ public class ConvertTests {
     [Fact]
     public void SolaKelvinTest() {
         (BigReal Sola, BigReal Kelvin)[] TestData = [
-            (BigReal.Parse("1"), BigReal.Parse("9940.15")),
-            (BigReal.Parse("-0.5"), BigReal.Parse("-4970.075")),
+            (BigReal.Parse("1"), BigReal.Parse("9940")),
+            (BigReal.Parse("-0.5"), BigReal.Parse("-4970")),
         ];
 
         foreach (var TestItem in TestData) {
