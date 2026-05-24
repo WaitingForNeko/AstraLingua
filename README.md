@@ -223,6 +223,10 @@ but standard meanings can be found in the Astra Lingua Dictionary. For example:
 - `18` - me (speaker / self)
 - `149` - storm (atmospheric disturbance / hazard)
 
+To learn more about Astra Lingua, you can [read the cheat sheet](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf) or [watch the video](https://youtu.be/EdC5M-olroU).
+
+## Transliteration
+
 Astra Lingua can be transliterated to English characters using the following symbols:
 - `a` (`⊢`)
 - `o` (`⊩`)
@@ -233,7 +237,25 @@ Astra Lingua can be transliterated to English characters using the following sym
 - `.` (`=`)
 - `!` (`≡`)
 
-To learn more about Astra Lingua, you can [read the cheat sheet](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf) or [watch the video](https://youtu.be/EdC5M-olroU).
+For example, `⊢⊢⊩⊩⊪⊪` (`hello`) can be transliterated as `aaoouu`.
+
+## Standard Units
+
+Astra Lingua uses standard units based on Sirius A, the brightest star in the night sky, 8.6 light years away from Earth:
+- Siri (the diameter of Sirius A)
+- Lumi (the time for light to travel the diameter of Sirius A)
+- Kora (the mass of Sirius A)
+- Sola (the surface temperature of Sirius A offset from absolute zero)
+
+<img src="https://github.com/WaitingForNeko/AstraLingua/blob/main/Assets/SiriusAAndBHubblePhoto.jpg?raw=true" width=184.5>
+
+*A photo of Sirius A and B by [NASA](https://commons.wikimedia.org/wiki/File:Sirius_A_and_B_Hubble_photo.jpg) using the Hubble Space Telescope.*
+
+For example:
+- `10` kilometers is approximately `0.0000042` Siri
+- `10` years is approximately `40,000,000` Lumi
+- `10` kilograms is approximately `0.0000000000000000000000000000024378` Kora
+- `10` degrees Celsius is approximately `0.0284859` Sola
 
 ## Examples
 
