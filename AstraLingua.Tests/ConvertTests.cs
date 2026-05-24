@@ -108,6 +108,62 @@ public class ConvertTests {
             InputResult.ShouldBe(TestItem.AstraLinguaRational);
         }
     }
+    [Fact]
+    public void SiriMetersTest() {
+        (BigReal Siri, BigReal Meters)[] TestData = [
+            (BigReal.Parse("1"), BigReal.Parse("2380000000")),
+            (BigReal.Parse("-0.5"), BigReal.Parse("-1190000000")),
+        ];
+
+        foreach (var TestItem in TestData) {
+            BigReal OutputResult = AstraLinguaConverter.SiriToMeters(TestItem.Siri);
+            OutputResult.ShouldBe(TestItem.Meters);
+            BigReal InputResult = AstraLinguaConverter.MetersToSiri(OutputResult);
+            InputResult.ShouldBe(TestItem.Siri);
+        }
+    }
+    [Fact]
+    public void LumiSecondsTest() {
+        (BigReal Lumi, BigReal Seconds)[] TestData = [
+            (BigReal.Parse("1"), BigReal.Parse("7.94")),
+            (BigReal.Parse("-0.5"), BigReal.Parse("-3.97")),
+        ];
+
+        foreach (var TestItem in TestData) {
+            BigReal OutputResult = AstraLinguaConverter.LumiToSeconds(TestItem.Lumi);
+            OutputResult.ShouldBe(TestItem.Seconds);
+            BigReal InputResult = AstraLinguaConverter.SecondsToLumi(OutputResult);
+            InputResult.ShouldBe(TestItem.Lumi);
+        }
+    }
+    [Fact]
+    public void KoraGramsTest() {
+        (BigReal Kora, BigReal Grams)[] TestData = [
+            (BigReal.Parse("1"), BigReal.Parse("4.102E33")),
+            (BigReal.Parse("-0.5"), BigReal.Parse("-2.051E33")),
+        ];
+
+        foreach (var TestItem in TestData) {
+            BigReal OutputResult = AstraLinguaConverter.KoraToGrams(TestItem.Kora);
+            OutputResult.ShouldBe(TestItem.Grams);
+            BigReal InputResult = AstraLinguaConverter.GramsToKora(OutputResult);
+            InputResult.ShouldBe(TestItem.Kora);
+        }
+    }
+    [Fact]
+    public void SolaKelvinTest() {
+        (BigReal Sola, BigReal Kelvin)[] TestData = [
+            (BigReal.Parse("1"), BigReal.Parse("9940.15")),
+            (BigReal.Parse("-0.5"), BigReal.Parse("-4970.075")),
+        ];
+
+        foreach (var TestItem in TestData) {
+            BigReal OutputResult = AstraLinguaConverter.SolaToKelvin(TestItem.Sola);
+            OutputResult.ShouldBe(TestItem.Kelvin);
+            BigReal InputResult = AstraLinguaConverter.KelvinToSola(OutputResult);
+            InputResult.ShouldBe(TestItem.Sola);
+        }
+    }
 
     private static string RemoveWhitespace(string String) {
         return string.Concat(String.Where(Char => !char.IsWhiteSpace(Char)));
