@@ -242,10 +242,10 @@ For example, `⊢⊢⊩⊩⊪⊪` (`hello`) can be transliterated as `aaoouu`.
 ## Standard Units
 
 Astra Lingua uses standard units based on Sirius A, the brightest star in the night sky, 8.6 light years away from Earth:
-- Siri (the diameter of Sirius A)
-- Lumi (the time for light to travel the diameter of Sirius A)
-- Kora (the mass of Sirius A)
-- Sola (the surface temperature of Sirius A offset from absolute zero)
+- Siri (the diameter of Sirius A) = `2_380_000` km
+- Lumi (the time for light to travel the diameter of Sirius A) = `7.94` seconds
+- Kora (the mass of Sirius A) = `4.102E30` kg
+- Sola (the surface temperature of Sirius A offset from absolute zero) = `9_940` °K
 
 <img src="https://github.com/WaitingForNeko/AstraLingua/blob/main/Assets/SiriusAAndBHubblePhoto.jpg?raw=true" width=184.5>
 
