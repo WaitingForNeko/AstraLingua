@@ -193,7 +193,7 @@ using ExtendedNumerics;
 Astra Lingua is designed as a lingua franca for different alien species to communicate with each other.
 As such, there are only three sounds.
 
-Since the word for "hello" ("⊢⊢⊩⊩⊪⊪") contains the three sounds in order, it can be used 
+Since the word for `hello` (`⊢⊢⊩⊩⊪⊪`) contains the three sounds in order, it can be used 
 to calibrate between species.
 
 Astra Lingua is based around balanced ternary. There are three digits:
