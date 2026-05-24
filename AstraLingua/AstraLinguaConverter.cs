@@ -378,7 +378,7 @@ public static partial class AstraLinguaConverter {
             BalancedTernaryToInteger(Denominator)
         );
         if (SimplifyForm) {
-            BigReal.Simplify(Rational);
+            Rational = BigReal.Simplify(Rational);
         }
         return Rational;
     }
