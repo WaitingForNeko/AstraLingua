@@ -346,7 +346,7 @@ public static partial class AstraLinguaConverter {
     }
     private static (sbyte[] Numerator, sbyte[] Denominator) RationalToBalancedTernaryRational(BigReal Rational, bool SimplifyForm) {
         if (SimplifyForm) {
-            Rational = BigReal.Simplify(Rational);
+            Rational = BigReal.SimplifySigns(BigReal.Simplify(Rational));
         }
         return (
             IntegerToBalancedTernary(Rational.Numerator),
@@ -378,7 +378,7 @@ public static partial class AstraLinguaConverter {
             BalancedTernaryToInteger(Denominator)
         );
         if (SimplifyForm) {
-            Rational = BigReal.Simplify(Rational);
+            Rational = BigReal.SimplifySigns(BigReal.Simplify(Rational));
         }
         return Rational;
     }
