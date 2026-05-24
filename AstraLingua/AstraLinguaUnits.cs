@@ -27,14 +27,14 @@ public static class AstraLinguaUnits {
         return Siri * MetersInOneSiri;
     }
     /// <summary>
-    /// Converts from seconds (a metric unit of time) to Lumi (the time for light to travel 1 Siri).<br/>
+    /// Converts from seconds (a metric unit of time) to Lumi (the time for light to travel the diameter of Sirius A).<br/>
     /// <c>1</c> second = ~<c>0.1259445844</c> Lumi.
     /// </summary>
     public static BigReal SecondsToLumi(BigReal Seconds) {
         return Seconds / SecondsInOneLumi;
     }
     /// <summary>
-    /// Converts from Lumi (the time for light to travel 1 Siri) to seconds (a metric unit of time).<br/>
+    /// Converts from Lumi (the time for light to travel the diameter of Sirius A) to seconds (a metric unit of time).<br/>
     /// <c>1</c> Lumi = <c>7.94</c> seconds.
     /// </summary>
     public static BigReal LumiToSeconds(BigReal Lumi) {
