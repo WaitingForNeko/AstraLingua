@@ -49,6 +49,13 @@ public class ConvertTests {
             OutputResult.ShouldBe(TestItem.AstraLingua);
             BigReal InputResult = AstraLinguaConverter.AstraLinguaRationalToRational(OutputResult);
             InputResult.ShouldBe(TestItem.Number);
+
+            string OutputResult2 = string.Concat(
+                AstraLinguaConverter.SymbolNumber,
+                AstraLinguaConverter.RationalToAstraLinguaRational(TestItem.Number, AddBrackets: false),
+                AstraLinguaConverter.SymbolNumber
+            );
+            OutputResult2.ShouldBe(TestItem.AstraLingua);
         }
     }
     [Fact]

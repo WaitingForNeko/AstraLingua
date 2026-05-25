@@ -55,17 +55,25 @@ public static partial class AstraLinguaConverter {
         return SentenceToIntegers(ParseBalancedTernary(AstraLingua));
     }
     /// <summary>
-    /// Converts an integer to an Astra Lingua literal integer.
+    /// Converts an integer to an Astra Lingua literal integer (balanced ternary).<br/>
+    /// <br/>
+    /// If <paramref name="AddBrackets"/>, the number will be prefixed and suffixed with <c>[</c>, which differentiates it from Astra Lingua text.
     /// </summary>
-    public static string IntegerToAstraLinguaInteger(BigInteger Integer) {
-        return string.Concat(
-            [SymbolNumber],
-            StringifyBalancedTernary(IntegerToBalancedTernary(Integer)),
-            [SymbolNumber]
-        );
+    public static string IntegerToAstraLinguaInteger(BigInteger Integer, bool AddBrackets = true) {
+        string Result = StringifyBalancedTernary(IntegerToBalancedTernary(Integer));
+
+        if (AddBrackets) {
+            Result = string.Concat(
+                [SymbolNumber],
+                Result,
+                [SymbolNumber]
+            );
+        }
+
+        return Result;
     }
     /// <summary>
-    /// Converts an Astra Lingua literal integer to an integer.
+    /// Converts an Astra Lingua literal integer (balanced ternary) to an integer.
     /// </summary>
     public static BigInteger AstraLinguaIntegerToInteger(scoped ReadOnlySpan<char> AstraLinguaInteger) {
         // Strip optional brackets
@@ -77,22 +85,28 @@ public static partial class AstraLinguaConverter {
         return BalancedTernaryToInteger(ParseBalancedTernary(AstraLinguaInteger));
     }
     /// <summary>
-    /// Converts a rational to an Astra Lingua literal rational.<br/>
+    /// Converts a rational to an Astra Lingua literal rational (balanced ternary).<br/>
     /// <br/>
     /// If <paramref name="SimplifyForm"/>, the numerator and denominator will be factorized into their canonical form.<br/>
-    /// If <paramref name="SimplifyToInteger"/>, the denominator and division symbol will be omitted if the denominator is 1.
+    /// If <paramref name="SimplifyToInteger"/>, the denominator and division symbol will be omitted if the denominator is 1.<br/>
+    /// If <paramref name="AddBrackets"/>, the number will be prefixed and suffixed with <c>[</c>, which differentiates it from Astra Lingua text.
     /// </summary>
-    public static string RationalToAstraLinguaRational(BigReal Rational, bool SimplifyForm = true, bool SimplifyToInteger = true) {
+    public static string RationalToAstraLinguaRational(BigReal Rational, bool SimplifyForm = true, bool SimplifyToInteger = true, bool AddBrackets = true) {
         (sbyte[] Numerator, sbyte[] Denominator) = RationalToBalancedTernaryRational(Rational, SimplifyForm);
+        string Result = StringifyBalancedTernaryRational(Numerator, Denominator, SimplifyToInteger);
 
-        return string.Concat(
-            [SymbolNumber],
-            StringifyBalancedTernaryRational(Numerator, Denominator, SimplifyToInteger),
-            [SymbolNumber]
-        );
+        if (AddBrackets) {
+            Result = string.Concat(
+                [SymbolNumber],
+                Result,
+                [SymbolNumber]
+            );
+        }
+
+        return Result;
     }
     /// <summary>
-    /// Converts an Astra Lingua literal rational to a rational.<br/>
+    /// Converts an Astra Lingua literal rational (balanced ternary) to a rational.<br/>
     /// <br/>
     /// If <paramref name="SimplifyForm"/>, the numerator and denominator will be factorized into their canonical form.
     /// </summary>
@@ -104,7 +118,6 @@ public static partial class AstraLinguaConverter {
         }
 
         (sbyte[] Numerator, sbyte[] Denominator) = ParseBalancedTernaryRational(AstraLinguaRational);
-
         return BalancedTernaryRationalToRational(Numerator, Denominator, SimplifyForm);
     }
     /// <summary>
