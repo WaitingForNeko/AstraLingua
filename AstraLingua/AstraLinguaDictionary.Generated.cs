@@ -768,7 +768,7 @@ public static partial class AstraLinguaDictionary {
         /*758*/ "ro (ろ / echo, reflection)",
         /*759*/ "wa (わ / circle, completion)",
         /*760*/ "wo (を / channel, connection)",
-        /*761*/ "n (ん / end, final sound)",
+        /*761*/ "n (ん / cuteness, blends into ya, yu, yo)",
         /*762*/ "ga (が / power, assertion)",
         /*763*/ "gi (ぎ / intellect, machine)",
         /*764*/ "gu (ぐ / barrier, protection)",
