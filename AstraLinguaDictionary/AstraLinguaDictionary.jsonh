@@ -20,17 +20,6 @@
  *   - 2 blocks: 40
  *   - 3 blocks: 364
  *   - 4 blocks: 3280
- * 
- * Increment Number Codes Script:
- *   def increment_numbers(text, step = 1)
- *     lines = text.split("\n")
- *     result = lines.map do |line|
- *       parts = line.split(":")
- *       number = parts[0].to_i + step
- *       return "#{number}:#{parts[1]}"
- *     end
- *     return result.join("\n")
- *   end
  */
 
 
