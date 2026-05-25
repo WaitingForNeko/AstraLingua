@@ -65,7 +65,7 @@
 23: "statement (no response needed / end of statement)"
 
 // Numbers (24-28)
-24: "number (numeric value)"
+24: "number (numeric value / word)"
 25: "btrit (balanced ternary digit / 1, 0, -1 / yes, maybe, no)"
 26: "one (1)"
 27: "zero (0)"
@@ -696,8 +696,8 @@
 628: "nightfall (low illumination / temporal marker)"
 629: "cycle (periodic repetition / natural rhythm)"
 630: "season-phase (environmental change / temporal variation)"
-631: "long-duration (extended temporal length)"
-632: "short-duration (brief temporal length)"
+631: "long-duration (extended temporal length / old)"
+632: "short-duration (brief temporal length / new / young)"
 633: "instant (near-zero temporal interval)"
 634: "gravity-field (pull / directional force)"
 635: "magnetic-field (alignment / attraction/repulsion force)"
