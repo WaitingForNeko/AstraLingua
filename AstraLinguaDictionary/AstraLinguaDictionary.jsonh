@@ -661,7 +661,7 @@
 593: "exit-point (escape / travel)"
 594: "entry-point (access / start)"
 595: "checkpoint (security / monitoring point)"
-596: "signal-post (marker / communication aid)"
+596: "signal-post (marker / communication aid / sign)"
 597: "landmark (navigation reference / orientation)"
 598: "beacon (visual / guidance signal)"
 599: "relay-node (information transmission point)"
