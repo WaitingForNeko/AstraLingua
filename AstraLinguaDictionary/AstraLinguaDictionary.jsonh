@@ -695,7 +695,7 @@
 627: "daylight (solar illumination / temporal marker)"
 628: "nightfall (low illumination / temporal marker)"
 629: "cycle (periodic repetition / natural rhythm)"
-630: "season-phase (environmental change / temporal variation)"
+630: "season (environmental change / general temporal variation)"
 631: "long-duration (extended temporal length / old)"
 632: "short-duration (brief temporal length / new / young)"
 633: "instant (near-zero temporal interval)"
