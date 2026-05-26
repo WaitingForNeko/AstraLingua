@@ -257,6 +257,30 @@ For example:
 - `10` kilograms is approximately `0.0000000000000000000000000000024378` Kora
 - `10` degrees Celsius is approximately `0.0284859` Sola
 
+## Loanwords
+
+Many languages have "loanwords" that are adapted from other languages:
+- English: `cafe` (from French: `café`)
+- Japanese: `アパート (apaato)` (from English: `apartment`)
+- German: `das Internet` (from English: `internet`)
+
+Astra Lingua cannot take loanwords, because every word must correspond to a number.
+Similarly, other languages are unlikely to take loanwords from Astra Lingua, because it only uses three characters (`a`, `o`, `u`).
+
+However, foreign words can be written verbatim in Astra Lingua, and should be pronounced in the same way as the original language:
+- `⊢⊢⊩⊩⊪⊪human` (`hello human`)
+
+If another language were to take loanwords from Astra Lingua, they would likely get distorted or simplified:
+- `aaoouu` (`hello`)
+  - Maybe written "aou"
+  - Maybe pronounced "ow" or "ah-oh"
+- `aaauaa` (`very`)
+  - Maybe written "aawa"
+  - Maybe pronounced "ahh wa"
+- `aaoaouauoouu` (`friendship`)
+  - Maybe written "awa owa-wow"
+  - Maybe pronounced "awah oh-wawow" or "awowow"
+
 ## Examples
 
 Some examples attempting to translate English to Astra Lingua:
