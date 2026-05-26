@@ -292,6 +292,11 @@ Some examples attempting to translate English to Astra Lingua:
 - Astra Lingua: `⊢⊢⊩⊪⊩⊪⊢⊢⊩⊪⊩⊢⊢⊢⊩⊪⊩⊪⊢⊢⊢⊩⊪⊢⊢⊢⊩⊪⊩⊪⊢⊢⊩⊪⊩⊢`
 - Transliterated: `aaouou aaouoa aaouou aaaoua aaouou aaouoa`
 
+#### "Soldier"
+- Number Codes: `809 (combat) 2 (life)`
+- Astra Lingua: `⊢⊢⊩⊢⊢⊩⊢⊩⊩⊩⊪⊪⊪⊢⊪`
+- Transliterated: `aaoaaoaooouu uau`
+
 ## Stable Release
 
 As of version 4.2 (2026/05/26), Astra Lingua is considered "stable".
