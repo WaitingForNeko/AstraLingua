@@ -691,7 +691,7 @@ public static partial class AstraLinguaDictionary {
         /*681*/ "tremor (uncontrolled body shake / instability signal)",
         /*682*/ "Astra Union (interstellar alliance / central authority)",
         /*683*/ "Astra Digit (official currency unit of Astra Union)",
-        /*684*/ "Astra Credit (physical token storing 0-5 Astra Digits)",
+        /*684*/ "Astra Circle (physical coin storing 0-9 Astra Digits)",
         /*685*/ "Konekomi (one-eyed rocky-skinned species with color bands)",
         /*686*/ "non-Konekomi (species other than Konekomi)",
         /*687*/ "human (two-eyed soft-skinned species from Earth)",
