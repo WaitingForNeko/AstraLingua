@@ -323,9 +323,9 @@ Some examples attempting to translate English to Astra Lingua:
 
 ## Stable Release
 
-As of version 4.2 (2026/05/26), Astra Lingua is considered "stable".
-The meanings of words and conversion process are now fixed, so you can
-rest assured that a sentence will not change its meaning in a later release.
+As of version 4.2 (released 2026/05/26), Astra Lingua is considered stable!
+The meaning of words and language structure are now fixed, so you can rest
+assured that a sentence will not change its meaning in a later release.
 
 ## License
 
