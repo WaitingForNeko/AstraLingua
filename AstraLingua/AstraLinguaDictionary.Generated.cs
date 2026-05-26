@@ -808,5 +808,15 @@ public static partial class AstraLinguaDictionary {
         /*798*/ "ruins (destroyed place / rubble / debris)",
         /*799*/ "hope (faith / optimism / persistence)",
         /*800*/ "despair (give up / lose hope / pessimism / surrender)",
+        /*801*/ "work (labor / employment)",
+        /*802*/ "leadership (management / command / organization)",
+        /*803*/ "teaching (education / knowledge guidance)",
+        /*804*/ "science (research / discovery)",
+        /*805*/ "engineering (machine design / construction)",
+        /*806*/ "medicine (healing / medical care)",
+        /*807*/ "farming (food cultivation / agriculture)",
+        /*808*/ "piloting (vehicle operation / navigation)",
+        /*809*/ "combat (warfare / defense)",
+        /*810*/ "trading (commerce / exchange)",
     ];
 }
