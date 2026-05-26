@@ -15,7 +15,8 @@
  * - Miscellaneous (63-800)
  * 
  * Block Limits:
- * - Maximum value for n 3-btrit blocks: ((3 ** (n * 2)) - 1) / 2
+ * - Maximum value for 3-btrit blocks:
+ *   - n blocks: ((3 ** (n * 2)) - 1) / 2
  *   - 1 block: 4
  *   - 2 blocks: 40
  *   - 3 blocks: 364
