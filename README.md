@@ -321,11 +321,16 @@ Some examples attempting to translate English to Astra Lingua:
 - Astra Lingua: `⊢⊢⊩⊢⊢⊩⊢⊩⊩⊩⊪⊪⊪⊢⊪`
 - Transliterated: `aaoaaoaooouu uau`
 
-## Stable Release
+## Release History
 
-As of version 4.2 (released 2026/05/26), Astra Lingua is considered stable!
-The meaning of words and language structure are now fixed, so you can rest
-assured that a sentence will not change its meaning in a later release.
+The first stable release of Astra Lingua was version 4.2 (released 2026/05/26).
+This means the meaning of words and language structure are now fixed, so you can
+rest assured that a sentence will not change its meaning in a later release!
+
+The first public release of Astra Lingua was version 1.0 (released 2026/03/21).
+
+The first official version of the dictionary was added to Astra Lingua on 2025/08/20.
+This marks the official creation date of Astra Lingua as the 20th of October, 2025!
 
 ## License
 
