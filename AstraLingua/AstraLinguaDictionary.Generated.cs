@@ -694,7 +694,7 @@ public static partial class AstraLinguaDictionary {
         /*684*/ "Astra Credit (physical token storing 0-5 Astra Digits)",
         /*685*/ "Konekomi (one-eyed rocky-skinned species with color bands)",
         /*686*/ "non-Konekomi (species other than Konekomi)",
-        /*687*/ "Human (two-eyed soft-skinned species from Earth)",
+        /*687*/ "human (two-eyed soft-skinned species from Earth)",
         /*688*/ "love (bond / attachment / care)",
         /*689*/ "hate (strong aversion / hostility)",
         /*690*/ "trust (confidence / reliance)",
