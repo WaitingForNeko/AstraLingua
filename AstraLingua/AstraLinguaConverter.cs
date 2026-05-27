@@ -183,9 +183,9 @@ public static partial class AstraLinguaConverter {
         return [.. Sentence];
     }
     private static BigInteger[] SentenceToIntegers(scoped ReadOnlySpan<sbyte> Sentence) {
-        // Ensure each block is 3 trits long
+        // Ensure each block has exactly 3 digits
         if (Sentence.Length % 3 != 0) {
-            throw new ArgumentException("Each block must be 3 trits long", nameof(Sentence));
+            throw new ArgumentException("Each block must have exactly 3 digits", nameof(Sentence));
         }
 
         List<BigInteger> Integers = [];
