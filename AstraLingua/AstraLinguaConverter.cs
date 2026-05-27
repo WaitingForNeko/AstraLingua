@@ -127,12 +127,16 @@ public static partial class AstraLinguaConverter {
     /// Note: The tones will be placed at the end of the output.
     /// </remarks>
     public static string AstraLinguaToTonedAstraLingua(scoped ReadOnlySpan<char> AstraLingua, int UncertainTones = 0, int NeutralTones = 0, int UrgentTones = 0) {
-        return string.Concat(
-            AstraLingua,
-            new string(SymbolUncertainTone, UncertainTones),
-            new string(SymbolNeutralTone, NeutralTones),
-            new string(SymbolUrgentTone, UrgentTones)
-        );
+        if (UncertainTones is 0 && NeutralTones is 0 && UrgentTones is 0) {
+            return AstraLingua.ToString();
+        }
+
+        StringBuilder ResultBuilder = new(AstraLingua.Length + UncertainTones + NeutralTones + UrgentTones);
+        ResultBuilder.Append(AstraLingua);
+        ResultBuilder.Append(SymbolUncertainTone, UncertainTones);
+        ResultBuilder.Append(SymbolNeutralTone, NeutralTones);
+        ResultBuilder.Append(SymbolUrgentTone, UrgentTones);
+        return ResultBuilder.ToString();
     }
     /// <summary>
     /// Converts a sequence of Astra Lingua in the Konekomi Dialect to a sequence of Astra Lingua.
