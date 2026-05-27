@@ -353,7 +353,7 @@ public static partial class AstraLinguaConverter {
             CurrentIndex--;
 
             // Loop until zero
-        } while (Integer > 0);
+        } while (Integer.Sign > 0);
 
         return BalancedTrits;
     }
@@ -399,7 +399,7 @@ public static partial class AstraLinguaConverter {
         Integer = BigInteger.Abs(Integer);
 
         int Count = 0;
-        while (Integer > 0) {
+        while (Integer.Sign > 0) {
             Integer = (Integer + 1) / 3;
             Count++;
         }
