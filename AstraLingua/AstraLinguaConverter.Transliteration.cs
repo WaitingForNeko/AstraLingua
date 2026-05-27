@@ -16,31 +16,31 @@ public static partial class AstraLinguaConverter {
     /// </summary>
     public const char SymbolTransliteratedMinusOne = 'u';
     /// <summary>
-    /// The symbol used for a space when transliterating to English.
+    /// The symbol used for a space when transliterated to English.
     /// </summary>
     public const char SymbolTransliteratedSpace = ' ';
     /// <summary>
-    /// The symbol used for shorthand division when transliterating to English.
+    /// The symbol used for shorthand division when transliterated to English.
     /// </summary>
     public const char SymbolTransliteratedDivision = '/';
     /// <summary>
-    /// The symbol used to start a number when transliterating to English.
+    /// The symbol used to start a number when transliterated to English.
     /// </summary>
     public const char SymbolTransliteratedNumberStart = '[';
     /// <summary>
-    /// The symbol used to end a number when transliterating to English.
+    /// The symbol used to end a number when transliterated to English.
     /// </summary>
     public const char SymbolTransliteratedNumberEnd = ']';
     /// <summary>
-    /// The symbol used for uncertainty or questioning when transliterating to English, specific to the Konekomi Dialect.
+    /// The symbol used for uncertainty or questioning when transliterated to English, specific to the Konekomi Dialect.
     /// </summary>
     public const char SymbolTransliteratedUncertainTone = '?';
     /// <summary>
-    /// The symbol used for neutrality or expressionlessness when transliterating to English, specific to the Konekomi Dialect.
+    /// The symbol used for neutrality or expressionlessness when transliterated to English, specific to the Konekomi Dialect.
     /// </summary>
     public const char SymbolTransliteratedNeutralTone = '.';
     /// <summary>
-    /// The symbol used for urgency or emphasis when transliterating to English, specific to the Konekomi Dialect.
+    /// The symbol used for urgency or emphasis when transliterated to English, specific to the Konekomi Dialect.
     /// </summary>
     public const char SymbolTransliteratedUrgentTone = '!';
 
