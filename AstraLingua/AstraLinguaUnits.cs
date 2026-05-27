@@ -42,7 +42,7 @@ public static class AstraLinguaUnits {
     }
     /// <summary>
     /// Converts from grams (a metric unit of mass) to Kora (the mass of Sirius A).<br/>
-    /// <c>1</c> gram = <c>~2.4378352E-34</c> Kora.
+    /// <c>1</c> gram = ~<c>2.4378352E-34</c> Kora.
     /// </summary>
     public static BigReal GramsToKora(BigReal Grams) {
         return Grams / GramsInOneKora;
@@ -56,7 +56,7 @@ public static class AstraLinguaUnits {
     }
     /// <summary>
     /// Converts from Kelvin (a metric unit of temperature) to Sola (the surface temperature of Sirius A).<br/>
-    /// <c>1</c> Kelvin = <c>~0.0001006036</c> Sola.
+    /// <c>1</c> Kelvin = ~<c>0.0001006036</c> Sola.
     /// </summary>
     public static BigReal KelvinToSola(BigReal Kelvin) {
         return Kelvin / KelvinInOneSola;
