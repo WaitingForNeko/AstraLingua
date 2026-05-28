@@ -7,8 +7,8 @@ namespace AstraLingua;
 
 public static partial class AstraLinguaDictionary {
     private static readonly ImmutableArray<string> GeneratedWords = [
-        /*0*/ "nothing (no object)",
-        /*1*/ "something (object)",
+        /*0*/ "nothing (no object / no thing)",
+        /*1*/ "something (object / thing)",
         /*2*/ "life (moving object)",
         /*3*/ "death (unmoving object)",
         /*4*/ "safety (short-term help)",
@@ -19,8 +19,8 @@ public static partial class AstraLinguaDictionary {
         /*9*/ "goodbye (end communication)",
         /*10*/ "close (nearby objects)",
         /*11*/ "far (far objects)",
-        /*12*/ "union (group / linked objects / physically connected)",
-        /*13*/ "division (separated / unlinked objects / physically disconnected / fraction)",
+        /*12*/ "union (group / linked objects / connected)",
+        /*13*/ "division (separated / unlinked objects / disconnected / fraction)",
         /*14*/ "likely (probably / confident / agree / truth / shall)",
         /*15*/ "unlikely (improbably / doubtful / disagree / lie / shall not)",
         /*16*/ "understand (clear / unambiguous)",
@@ -797,7 +797,7 @@ public static partial class AstraLinguaDictionary {
         /*787*/ "physically-pure (clean / untainted)",
         /*788*/ "physically-impure (contaminated / tainted)",
         /*789*/ "prototype (unfinished / early version)",
-        /*790*/ "design (plan / idea)",
+        /*790*/ "design (plan / idea / concept)",
         /*791*/ "positive-outcome (good ending / goal / aim / objective)",
         /*792*/ "negative-outcome (bad ending / anti-goal / something to avoid)",
         /*793*/ "positive-progress (helps goal / improvement)",
@@ -818,5 +818,12 @@ public static partial class AstraLinguaDictionary {
         /*808*/ "piloting-job (vehicle operation / navigation)",
         /*809*/ "combat-job (warfare / defense)",
         /*810*/ "trading-job (commerce / exchange / buying and selling)",
+        /*811*/ "chance (randomness / multiple possibilities)",
+        /*812*/ "simple (straightforward / easy)",
+        /*813*/ "complex (complicated / hard)",
+        /*814*/ "physical (can be touched)",
+        /*815*/ "virtual (cannot be touched)",
+        /*816*/ "cheap (low-cost / efficient)",
+        /*817*/ "expensive (high-cost / inefficient)",
     ];
 }
