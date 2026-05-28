@@ -85,8 +85,8 @@
 
 // Quantity (42-44)
 
-42: "big (large property / many)"
-43: "small (small property / few)"
+42: "many (high count / numerous)"
+43: "few (low count / scarce)"
 44: "repeat (loop / multiplied by)"
 
 // Shapes (45-52)
