@@ -844,5 +844,11 @@ public static partial class AstraLinguaDictionary {
         /*834*/ "position (location)",
         /*835*/ "rotation (orientation)",
         /*836*/ "scale (size)",
+        /*837*/ "luminous-body (light-emitting massive object / star)",
+        /*838*/ "unluminous-body (non-light-emitting massive object / planet)",
+        /*839*/ "orbit (gravitational path / stable repeated trajectory)",
+        /*840*/ "drift (uncontrolled / non-repeating movement)",
+        /*841*/ "explosion (outward energy release / expansion event)",
+        /*842*/ "implosion (inward collapse / contraction event)",
     ];
 }
