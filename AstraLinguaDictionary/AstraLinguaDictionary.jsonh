@@ -12,7 +12,7 @@
  * - Shapes (45-52)
  * - States (53-58)
  * - Comparisons (59-62)
- * - Miscellaneous (63-817)
+ * - Miscellaneous (63-836)
  * 
  * Block Limits:
  * - Maximum value for 3-btrit blocks:
@@ -873,3 +873,22 @@
 815: "virtual (cannot be touched)"
 816: "cheap (low-cost / efficient)"
 817: "expensive (high-cost / inefficient)"
+818: "long-distance (long length / tall)"
+819: "short-distance (short length / short)"
+820: "fast (high speed)"
+821: "slow (low speed)"
+822: "heavy-mass (high mass / difficult to lift)"
+823: "light-mass (low mass / easy to lift)"
+824: "high-temperature (hot / high energy state)"
+825: "low-temperature (cold / low energy state)"
+826: "hard (rigid / resistant to deformation / physically strong)"
+827: "soft (flexible / easily deformed / physically weak)"
+828: "rough (uneven surface / high friction)"
+829: "smooth (even surface / low friction)"
+830: "sharp (thin edge / high cutting ability)"
+831: "blunt (thick edge / low cutting ability)"
+832: "dense (compact / high concentration)"
+833: "loose (spread out / low concentration)"
+834: "position (location)"
+835: "rotation (orientation)"
+836: "scale (size)"
