@@ -63,8 +63,8 @@
 
 // Change (29-34)
 
-29: "change (change in position/property / move)"
-30: "stop (no change in position/property / halt)"
+29: "change (change in position or property / move)"
+30: "stop (no change in position or property / halt)"
 31: "take (obtain / acquire / listen)"
 32: "release (lose / give / speak)"
 33: "increase (growing of property / gain of power / rise / plus)"
