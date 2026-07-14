@@ -12,7 +12,7 @@
  * - Shapes (45-52)
  * - States (53-58)
  * - Comparisons (59-62)
- * - Miscellaneous (63-842)
+ * - Miscellaneous (63-848)
  * 
  * Block Limits:
  * - Maximum value for 3-btrit blocks:
@@ -898,3 +898,9 @@
 840: "drift (uncontrolled / non-repeating movement)"
 841: "explosion (outward energy release / expansion event)"
 842: "implosion (inward collapse / contraction event)"
+843: "rule (law / expectation)"
+844: "punishment (penalty for rule violation)"
+845: "physical-connection (physical attachment / glued / to stick together)"
+846: "physical-separation (physical detachment / broken / to break apart)"
+847: "order (harmony / functional society)"
+848: "disorder (chaos / dysfunctional society)"
