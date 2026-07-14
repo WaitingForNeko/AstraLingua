@@ -321,6 +321,34 @@ Some examples attempting to translate English to Astra Lingua:
 - Astra Lingua: `⊢⊢⊩⊢⊢⊩⊢⊩⊩⊩⊪⊪⊪⊢⊪`
 - Transliterated: `aaoaaoaooouu uau`
 
+## Idioms
+
+Every language has idioms, often used for emphasis or to promote cultural values:
+- Idiom: `Break a leg!`
+- Meaning: `Good luck!`
+- Origin: Superstitions that saying "good luck" will result in bad luck
+
+Idioms come in many forms, and they often express ideas beyond their literal meanings.
+They reflect the culture, beliefs, and values of a language's speakers.
+
+Some idioms in Astra Lingua:
+
+#### "Sleep followed by another sleep"
+- Number Codes: `618 (sleep-cycle) 36 (later) 618 (sleep-cycle)`
+- Astra Lingua: `⊢⊢⊩⊢⊪⊪⊢⊩⊪⊩⊪⊩⊢⊢⊢⊪⊩⊩⊢⊢⊩⊢⊪⊪⊢⊩⊪⊩⊪⊩`
+- Meaning: To do something all the time
+- Origin: Konekomi
+
+This could be translated as "from sleep to sleep" or "around the clock".
+
+#### "A hidden, significant thing has broken"
+- Number Codes: `58 (hidden) 40 (very) 1 (something) 846 (physical-separation)`
+- Astra Lingua: `⊢⊢⊪⊢⊩⊢⊩⊪⊢⊢⊢⊢⊪⊢⊢⊩⊪⊢⊢⊢⊩⊢⊢⊢⊢⊢⊩⊩⊪⊩`
+- Meaning: Something very bad has happened
+- Origin: Konekomi
+
+This could be translated as "the unseen bond has broken" or "the invisible thread has snapped".
+
 ## Release History
 
 The first stable release of Astra Lingua was version 4.2 (released 2026/05/26).
