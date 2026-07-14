@@ -850,5 +850,11 @@ public static partial class AstraLinguaDictionary {
         /*840*/ "drift (uncontrolled / non-repeating movement)",
         /*841*/ "explosion (outward energy release / expansion event)",
         /*842*/ "implosion (inward collapse / contraction event)",
+        /*843*/ "rule (law / expectation)",
+        /*844*/ "punishment (penalty for rule violation)",
+        /*845*/ "physical-connection (physical attachment / glued / to stick together)",
+        /*846*/ "physical-separation (physical detachment / broken / to break apart)",
+        /*847*/ "order (harmony / functional society)",
+        /*848*/ "disorder (chaos / dysfunctional society)",
     ];
 }
