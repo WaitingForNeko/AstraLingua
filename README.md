@@ -12,6 +12,7 @@ a game by studio [Waiting For Neko](https://waitingforneko.com).
 - [`AstraLingua`](https://github.com/WaitingForNeko/AstraLingua/tree/main/AstraLingua) - A C# library for converting to/from Astra Lingua.
 - [`AstraLinguaCheatSheet.pdf`](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaCheatSheet/AstraLinguaCheatSheet.pdf) - A double-page PDF explaining the basics of Astra Lingua.
 - [`AstraLinguaDictionary.jsonh`](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaDictionary/AstraLinguaDictionary.jsonh) - A JSONH file containing the standard words used in Astra Lingua.
+- [`AstraLinguaFont.otf`](https://github.com/WaitingForNeko/AstraLingua/blob/main/AstraLinguaFont/AstraLinguaFont.otf) - A sans serif font with only the symbols used in Astra Lingua
 
 ## Try Online
 
@@ -348,6 +349,21 @@ This could be translated as "from sleep to sleep" or "around the clock".
 - Origin: Konekomi
 
 This could be translated as "the unseen bond has broken" or "the invisible thread has snapped".
+
+## Font
+
+Most fonts don't contain Astra Lingua's symbols, and fallback fonts that contain every
+character are large, so this repository contains a specialized font containing only
+Astra Lingua's symbols:
+- `⊢⊩⊪>[–=≡aou]/?.!`
+
+The font is a subset of [Lete Sans Math](https://github.com/abccsss/LeteSansMath) v0.61,
+which is an OpenType sans-serif math font based on the [Lato](https://fonts.google.com/specimen/Lato) font.
+
+The font was created using the following command:
+```
+pyftsubset LeteSansMath.otf --unicodes=U+22A2,U+22A9,U+22AA,U+003E,U+005B,U+2013,U+003D,U+2261,U+0061,U+006F,U+0075,U+005D,U+002F,U+003F,U+002E,U+0021 --output-file=AstraLinguaFont.otf
+```
 
 ## Release History
 
