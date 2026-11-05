@@ -355,14 +355,14 @@ This could be translated as "the unseen bond has broken" or "the invisible threa
 Most fonts don't contain Astra Lingua's symbols, and fallback fonts that contain every
 character are large, so this repository contains a specialized font containing only
 Astra Lingua's symbols:
-- `⊢⊩⊪>[–=≡aou]/?.!`
+- `⊢⊩⊪>[–=≡aouAOU]/?.!`
 
-The font is a subset of [Lete Sans Math](https://github.com/abccsss/LeteSansMath) v0.61,
+The font is a subset of [Lete Sans Math](https://github.com/abccsss/LeteSansMath) v0.63,
 which is an OpenType sans-serif math font based on the [Lato](https://fonts.google.com/specimen/Lato) font.
 
 The font was created using the following command:
 ```
-pyftsubset LeteSansMath.otf --unicodes=U+22A2,U+22A9,U+22AA,U+003E,U+005B,U+2013,U+003D,U+2261,U+0061,U+006F,U+0075,U+005D,U+002F,U+003F,U+002E,U+0021 --output-file=AstraLinguaFont.otf
+pyftsubset LeteSansMath.otf --unicodes=U+22A2,U+22A9,U+22AA,U+003E,U+005B,U+2013,U+003D,U+2261,U+0061,U+006F,U+0075,U+0041,U+004F,U+0055,U+005D,U+002F,U+003F,U+002E,U+0021 --output-file=AstraLinguaFont.otf
 ```
 
 ## Release History
